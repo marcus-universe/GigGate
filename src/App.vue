@@ -1,30 +1,35 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+<DesktopMenu/>
+<MobileMenu/>
+
+
+  <nav v-if="mobile == false & desktopMenu == true" class="dektopNav">
+    <router-link to="/">Home</router-link>
+    <router-link to="/proberaeume">Proberäume</router-link>
   </nav>
-  <router-view/>
+  <router-view />
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-nav {
-  padding: 30px;
+<script>
+import DesktopMenu from './components/Menus/DesktopMenu.vue'
+import MobileMenu from './components/Menus/MobileMenu.vue'
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+  name: 'App',
+  components: {
+    DesktopMenu,
+    MobileMenu
+  },
+  data() {
+    return {
+      mobile: false,
+      desktopMenu: false
     }
   }
 }
+</script>
+
+<style lang="scss">
+  @import "./sass/style.sass";
 </style>
