@@ -29,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.giggate.dev",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -53,14 +53,12 @@
     "updater": {
       "active": false
     },
-    "windows": [
-      {
-        "fullscreen": false,
-        "height": 600,
-        "resizable": true,
-        "title": "GigGate",
-        "width": 800
-      }
-    ]
+    "windows": [{
+      "fullscreen": false,
+      "height": 600,
+      "resizable": true,
+      "title": "GigGate",
+      "width": 800
+    }]
   }
 }
