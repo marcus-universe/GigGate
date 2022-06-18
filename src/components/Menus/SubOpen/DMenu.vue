@@ -7,10 +7,12 @@
             <DMenuPunkt
                 :link="'/'"
                 :name="'Home'"
+                :icon="'home'"
                 @click="$emit('playmenu')" />
             <DMenuPunkt
                 :link="'/proberaeume'"
                 :name="'Proberäume'"
+                :icon="'proberaum'"
                 @click="$emit('playmenu')" />
             <DMenuPunkt
                 :link="'/events'"

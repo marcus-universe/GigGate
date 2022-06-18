@@ -3,8 +3,9 @@
         'width': boxWidth + '%', 'padding': 0 + ' ' + pR + '% ' + 0 + ' ' + pL + '% '
     }">
 
-        <div class="imagebox">
-            <img :src="image" alt="">
+        <div v-if="!videoActive" class="imagebox"
+            :style="{backgroundImage: 'url('+ require('@/assets/img/banner/events.jpg') +')'}">
+            <!-- <img :src="" alt=""> -->
         </div>
 
         <div v-if="videoActive" class="videobox">
@@ -36,8 +37,9 @@ export default {
         },
         image: {
             type: String,
-            default: '#'
+            default: 'events'
         },
+
         pL: {
             type: Number,
             default: 0
@@ -46,6 +48,6 @@ export default {
             type: Number,
             default: 0
         }
-    },
+    }
 }
 </script>

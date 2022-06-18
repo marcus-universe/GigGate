@@ -1,14 +1,29 @@
 <template>
-  <button class="CallToAction" :class="[ButtonStyle]"><slot>Default Button Text</slot></button>
+  <div :class="{flex_center_h: ButtonCenter}">
+
+    <router-link :to="'/' + link">
+      <button class="CallToAction" :class="[ButtonStyle]">
+        <slot>Default Button Text</slot>
+      </button>
+    </router-link>
+  </div>
 </template>
 
 <script>
 export default {
     props: {
         ButtonStyle: {
+            type: String,
+            default: 'ButtonStyle1'
+        },
+        ButtonCenter: {
+            type: Boolean,
+            default: false
+    },
+    link: {
         type: String,
-        default: 'ButtonStyle1'
-        }
+        default: ''
+    },
     },
 }
 </script>

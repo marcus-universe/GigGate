@@ -28,6 +28,8 @@ module.exports = {
     "object-curly-spacing": ["off", "always"],
     "quotes": ["off", "double"],
     "dot-notation": ["off", { "allowKeywords": true }],
+    "multi-word-component-names": [0, { "componentName": "^[a-zA-Z]+$" }],
+    "vue/multi-word-component-names": ["off", { "componentName": "^[a-zA-Z]+$" }],
     // "linebreak-style": ["error", "windows"],
     // "quotes": ["error", "single"],
 

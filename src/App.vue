@@ -9,18 +9,23 @@
       <Component :is="Component" />
     </transition>
   </router-view>
+
+
+<Footer/>
 </template>
 
 
 <script>
 import DesktopMenu from './components/Menus/DesktopMenu.vue'
 import MobileMenu from './components/Menus/MobileMenu.vue'
+import Footer from './components/Section/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     DesktopMenu,
-    MobileMenu
+    MobileMenu,
+    Footer,
   },
   data() {
     return {
@@ -31,5 +36,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "./sass/style.sass";
+  @import "@/sass/style.sass";
 </style>
