@@ -3,6 +3,8 @@ $neon: #00F2DB
 $white: #EFF0FF
 $bg: #1C1846
 $bg-gradient: linear-gradient(50deg,#1C1846, #341E8B)
+$paddingNav: 0.4rem
+$menu-height: calc(50px + $paddingNav + $paddingNav)
 
 @import url("https://use.typekit.net/eak6pjs.css")
 
@@ -11,7 +13,7 @@ $riftFont: rift-soft, sans-serif
 
 /* width */
 ::-webkit-scrollbar
-    width: 10px
+    width: 14px
     background: $bg
 
 /* Track */
@@ -20,8 +22,10 @@ $riftFont: rift-soft, sans-serif
 
 /* Handle */
 ::-webkit-scrollbar-thumb
-    background: $neon
+    background: $purple
+    box-shadow: inset 0 0 2px rgba(0,0,0,0.6)
     border-radius: 10px
+    border: solid 3px $bg
 
 body
     margin: 0
@@ -32,4 +36,12 @@ body
 #app
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
-    margin: calc(50px + 2rem) 0 0 0
+    margin: $menu-height 0 0 0
+    padding: 0
+
+.PageFade-enter-active, .PageFade-leave-active
+    transition: opacity 0.2s ease
+.PageFade-enter-from, .PageFade-leave-to
+    opacity: 0
+.PageFade-enter-to, .PageFade-leave-from
+    opacity: 1

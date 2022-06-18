@@ -25,6 +25,9 @@ module.exports = {
     "comma-dangle": ["off", "always"],
     "indent": ["off", 6],
     "no-trailing-spaces": ["off", { "skipBlankLines": true }],
+    "object-curly-spacing": ["off", "always"],
+    "quotes": ["off", "double"],
+    "dot-notation": ["off", { "allowKeywords": true }],
     // "linebreak-style": ["error", "windows"],
     // "quotes": ["error", "single"],
 

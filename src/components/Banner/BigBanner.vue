@@ -1,13 +1,24 @@
 <template>
-    <div class="Banners" :class="[bannerClass]" :style="{'width': boxWidth + '%'}">
-        <h1 v-if="h1Active == true" class="h1Banner">
-            <slot>Default</slot>
-        </h1>
-        <h2 v-if="h1Active == false">
-            <slot>Default</slot>
-        </h2>
+    <div class="Banners" :class="[bannerClass]" :style="{
+        'width': boxWidth + '%', 'padding': 0 + ' ' + pR + '% ' + 0 + ' ' + pL + '% '
+    }">
+
+        <div class="imagebox">
+            <img :src="image" alt="">
+        </div>
+
+        <div v-if="videoActive" class="videobox">
+            <video class="videoplayer" controls>
+                <source src="#" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="BannerTXTBox">
+            <slot></slot>
+        </div>
     </div>
 </template>
+
 <script>
 export default {
     props: {
@@ -17,11 +28,23 @@ export default {
         },
         bannerClass: {
             type: String,
-            default: 'EventsBanner'
+            default: 'gradientBG'
         },
-        h1Active: {
+        videoActive: {
             type: Boolean,
             default: false
+        },
+        image: {
+            type: String,
+            default: '#'
+        },
+        pL: {
+            type: Number,
+            default: 0
+        },
+        pR: {
+            type: Number,
+            default: 0
         }
     },
 }

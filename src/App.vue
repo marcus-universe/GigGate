@@ -1,13 +1,14 @@
 <template>
-<DesktopMenu/>
-<MobileMenu/>
+  <DesktopMenu v-if="mobile === false" :mobile="mobile" />
+  <MobileMenu v-if="mobile === true" :mobile="mobile" />
 
 
-  <nav v-if="mobile == false & desktopMenu == true" class="dektopNav">
-    <router-link to="/">Home</router-link>
-    <router-link to="/proberaeume">Proberäume</router-link>
-  </nav>
-  <router-view />
+
+  <router-view v-slot="{Component}">
+    <transition name="PageFade">
+      <Component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 
@@ -23,8 +24,7 @@ export default {
   },
   data() {
     return {
-      mobile: false,
-      desktopMenu: false
+      mobile: false,      
     }
   }
 }
