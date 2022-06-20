@@ -9,7 +9,7 @@
         </div>
 
         <div v-if="videoActive" class="videobox">
-            <video class="videoplayer" controls>
+            <video class="videoplayer" controls :poster="require('@/assets/img/banner/events.jpg')">
                 <source src="#" type="video/mp4">
             </video>
         </div>
