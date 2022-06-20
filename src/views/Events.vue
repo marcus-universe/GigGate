@@ -1,5 +1,5 @@
 <template>
-  <div class="events"></div>
+  <section class="events"></section>
 </template>
 
 <script>
