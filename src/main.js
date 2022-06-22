@@ -5,4 +5,8 @@ import Vue3Lottie from 'vue3-lottie'
 import 'vue3-lottie/dist/style.css'
 
 
-createApp(App).use(router).use(Vue3Lottie).mount('#app')
+const app = createApp(App)
+
+app.config.globalProperties.loggedIn = false
+
+app.use(router).use(Vue3Lottie).mount('#app')

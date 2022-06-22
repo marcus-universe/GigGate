@@ -54,11 +54,21 @@
       "active": false
     },
     "windows": [{
-      "fullscreen": false,
-      "height": 600,
-      "resizable": true,
-      "title": "GigGate",
-      "width": 800
-    }]
+        "label": "giggate",
+        "title": "GigGate",
+        "fullscreen": false,
+        "height": 600,
+        "width": 800,
+        "resizable": true
+      },
+      {
+        "label": "settings",
+        "title": "Settings",
+        "url": "/#/settings",
+        "width": 300,
+        "height": 800,
+        "resizable": true
+      }
+    ]
   }
 }

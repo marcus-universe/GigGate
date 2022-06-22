@@ -1,6 +1,6 @@
 <template>
-  <DesktopMenu v-if="mobile === false" :mobile="mobile" />
-  <MobileMenu v-if="mobile === true" :mobile="mobile" />
+  <DesktopMenu v-if="mobile === false && currentRouteName !== 'Settings'" :mobile="mobile" />
+  <MobileMenu v-if="mobile === true && currentRouteName !== 'Settings'" :mobile="mobile" />
 
 
 
@@ -11,7 +11,7 @@
   </router-view>
 
 
-<Footer/>
+<Footer v-if="currentRouteName !== 'Settings'"/>
 </template>
 
 
@@ -29,7 +29,13 @@ export default {
   },
   data() {
     return {
-      mobile: false,      
+      mobile: false,
+    }
+  },
+
+  computed: {
+    currentRouteName() {
+        return this.$route.name
     }
   }
 }
