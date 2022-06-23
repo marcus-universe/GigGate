@@ -16,6 +16,7 @@
 
 
 <script>
+// import {computed} from 'vue'
 import DesktopMenu from './components/Menus/DesktopMenu.vue'
 import MobileMenu from './components/Menus/MobileMenu.vue'
 import Footer from './components/Section/Footer.vue'
@@ -27,9 +28,11 @@ export default {
     MobileMenu,
     Footer,
   },
+
   data() {
     return {
-      mobile: false,
+      loggedIn: false,
+      mobile: false
     }
   },
 

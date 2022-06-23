@@ -7,9 +7,9 @@
 
     <div class="rightNav">
 
-        <Button1 v-if="!loggedIn">Anmelden</Button1>
+        <Button1 v-if="!LoggedIn">Anmelden</Button1>
 
-        <Button1 CustomStyle="ButtonStyle3" v-if="!loggedIn">Registrieren</Button1>
+        <Button1 CustomStyle="ButtonStyle3" v-if="!LoggedIn">Registrieren</Button1>
 
         <Bell @click="bellToggle" />
 
@@ -33,7 +33,7 @@
 
 <Notification :bellOpen="bellOpen" />
 
-<Anmelden />
+<Anmelden/>
 
 </template>
 
@@ -74,6 +74,7 @@ export default {
             type: Boolean,
             default: false,
         },
+   
     },
     methods: {
         playmenu() {

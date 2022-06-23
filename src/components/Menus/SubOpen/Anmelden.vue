@@ -39,7 +39,7 @@
             Passwort vergessen?
         </label>
     </div>
-    <Button1 @click="Login">Anmelden</Button1>
+    <Button1 @click="Eingeloggt = true">Anmelden</Button1>
 </div>
 <div class="blurBG"></div>
 </template>
@@ -51,16 +51,15 @@ import {
 } from '@/components/Elements'
 
 export default {
-     
+
     components: {
         LinesStroke,
         Button1
     },
+    props: {
+  
+    },
     methods: {
-        Login() {
-            this.loggedIn = true 
-            console.log(this.loggedIn)
-        }
     },
    
 
