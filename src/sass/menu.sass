@@ -1,0 +1,392 @@
+// ###############################
+// Navigation Desktop
+// ###############################
+$DesktopMenuIcons: 40px
+.desktopNavBar
+    position: fixed
+    z-index: 3
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    padding: $paddingNav 0
+    // border-bottom: 3px solid $purple
+    top: 0
+    margin: 0
+    width: 100%
+    background: $bg
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2)
+    .navContent
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        width: calc($contentWidth + $banner_gap * 2 + $banner_gap)
+        .logo
+            width: $DesktopMenuIcons
+            margin: 0
+            padding: 0
+        .LogoLink
+            display: flex
+            justify-content: center
+            align-items: center
+            position: relative
+            height: 100%
+        .MenuBurger
+            width: $DesktopMenuIcons
+            height: $DesktopMenuIcons
+            margin: 0
+            padding: 0
+            transition: filter 0.3s ease-in-out
+            &:hover, &:focus, &:active
+                cursor: pointer
+                filter: brightness(1.7)
+
+        .rightNav
+            display: flex
+            flex-direction: row
+            align-items: center
+            gap: 1rem
+            .BellIcon
+                .bellNumbers
+                    position: absolute
+                    top: 10px
+                    margin-left: 25px
+                    background: $white
+                    width: 22px
+                    height: 22px
+                    border-radius: 50%
+                    text-align: center
+                    font-family: $darkmodeFont
+                    font-weight: 600
+                    font-size: 0.9rem
+                    z-index: 2
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    color: $bg
+                    box-shadow: 0 0 1rem rgba($bg, 0.5)
+                    // border: solid 2px $white
+                    transition: color 0.2s ease, background 0.2s ease
+
+                svg
+                    position: relative
+                    width: $DesktopMenuIcons
+                    z-index: 1
+                    .Glocke
+                        fill: $purple
+                        transition: fill 0.2s ease-in-out
+
+                &:hover
+                    cursor: pointer
+                    .Glocke
+                        fill: $white
+
+.Notifications
+    position: fixed
+    z-index: 2
+    // top: $menu-height
+    right: 0
+    min-height: 200px
+    min-width: 25%
+    background: $white
+    border: solid 4px $purple
+    box-shadow: 0px 0px 1rem rgba($bg, 0.5)
+    border-bottom-left-radius: $radius_1
+    border-bottom-right-radius: $radius_1
+
+.bellOpen-enter-active, .bellOpen-leave-active
+    transition: opacity 0.2s ease-in-out, top 0.2s ease-in-out
+.bellOpen-enter-from, .bellOpen-leave-to
+    opacity: 0
+    top: -100%
+.bellOpen-enter-to, .bellOpen-leave-from
+    opacity: 1
+    top: $menu-height
+
+.dektopNav
+    padding: 2rem 2rem
+    display: flex
+    flex-direction: row
+    justify-content: center
+    flex-basis: 100%
+    font-family: $darkmodeFont
+    min-width: 10%
+    right: 0%
+    border-bottom-left-radius: 1rem
+    border-bottom-right-radius: 1rem
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.4)
+    min-height: calc(40% - $menu-height)
+    font-size: 1.5rem
+    position: fixed
+    z-index: 2
+    top: $menu-height
+    background: rgba($bg, 0.9)
+    backdrop-filter: blur(5px)
+    .alignMenuItems
+        display: flex
+        align-items: stretch
+        flex-direction: column
+        justify-content: center
+        min-width: 10%
+        a
+            color: $white
+            background: $bg
+            text-decoration: none
+            padding: 0.5rem
+            margin: 0.5rem 0
+            border-radius: 1rem
+            transition: all 0.2s ease
+            font-family: $darkmodeFont
+            font-weight: 600
+            font-size: 1.2rem
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            border: solid 2px $purple
+            // min-width: 30%
+            text-align: left
+            &:hover, &:focus, &:active
+                color: $white
+                text-shadow: 0 0 1rem $bg
+                background: $purple
+                box-shadow: 0 0rem 2rem rgba($purple,0.6)
+                .menuIcon
+                    filter: drop-shadow(0 0rem 1rem rgba($bg,0.6))
+            &.router-link-exact-active
+                color: $neon
+                border: solid 2px $neon
+                &:hover, &:focus, &:active
+                    color: $bg
+                    background: $neon
+                    box-shadow: 0 0rem 2rem rgba($neon,0.6)
+                    text-shadow: 0 0 0rem $bg
+            .menuIcon
+                width: $DesktopMenuIcons
+                height: $DesktopMenuIcons
+                margin-right: 0.5rem
+
+.menufade-enter-from, .menufade-leave-to
+    opacity: 0
+    top: -100%
+.menufade-enter-to, .menufade-leave-from
+    opacity: 1
+    top: $menu-height
+.menufade-enter-active, .menufade-leave-active
+    transition: opacity 0.4s ease, top 0.4s ease-in-out
+
+// Anmelden
+$innerWidthAnmelden: 80%
+
+.anmelden
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) translateY(-50%)
+    z-index: 2
+    border-radius: $radius_1
+    width: clamp(500px, 50%, 700px)
+    background: $bg-gradient
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    box-shadow: 0px 0px 1rem rgba($bg,0.9)
+    border: solid 0.2rem $neon
+    padding: 2rem
+    gap: 1rem
+    h2
+        color: $neon
+        font-size: 2rem
+        margin: 0
+        padding: 0
+    .formZeile
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        gap: 0.5rem
+        align-items: flex-start
+        min-width: $innerWidthAnmelden
+        label
+            font-family: $darkmodeFont
+            font-weight: 400
+            color: $white
+            text-shadow: 0px 0px 1rem rgba($bg,0.8)
+            opacity: 0.7
+        input[type=text]
+            padding: 0.5rem
+            min-width: calc(100% - 1rem)
+            border-radius: $radius_2
+            border: none
+            box-shadow: 0px 0px 1rem rgba($bg,0.8)
+            font-size: 1.2rem
+            font-weight: 500
+            transition: padding 0.2s ease, min-width 0.2s ease, box-shadow 0.2s ease
+            color: $bg-gradient
+            &:active, &:focus
+                border: none
+                outline: none
+                padding: 0.5rem 0.5rem 0.5rem 1rem
+                min-width: calc(100% - 1.5rem)
+                box-shadow: 0 0 1rem rgba($neon, 0.5)
+
+.exit
+    width: 40px
+    position: absolute
+    right: 1rem
+    top: 1rem
+.LinkText
+    font-family: $darkmodeFont
+    font-weight: 400
+    color: $white
+    text-shadow: 0px 0px 1rem rgba($bg,0.8)
+    opacity: 0.7
+.SubmitZeile
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    width: $innerWidthAnmelden
+
+// ###############################
+// Navigation Mobile
+// ###############################
+$padding_M_H: 0.5rem
+$padding_M_W: 1rem
+
+.MobileNavLeiste
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    width: 100%
+    .topMobileBar
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: center
+        position: fixed
+        top: 0
+        width: calc(100% - $padding_M_W*2)
+        background: $bg-gradient
+        padding: $padding_M_H $padding_M_W
+        z-index: 3
+        box-shadow: 0px 0px 2rem rgba($bg,0.9)
+        .alignMobileNav
+            position: relative
+            width: 90vw
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: space-between
+            .profile, .options
+                display: flex
+                flex-direction: row
+                align-items: center
+                justify-content: center
+                gap: 0.6rem
+                // background: $purple
+                img
+                    width: 35px
+                    height: 35px
+                .mobileOption
+                    width: 30px
+                    height: 30px
+            .profile
+                img
+                    border-radius: 50%
+                &:hover, &:focus, &:active
+                    filter: drop-shadow(0 0rem 1rem rgba($bg,0.6))
+    .bottomMobileBar
+        position: fixed
+        bottom: 0
+        width: calc(100% - $padding_M_W*2)
+        z-index: 3
+        background: $bg-gradient
+        padding: $padding_M_H $padding_M_W
+        // border-radius: $radius_1 $radius_1 0 0
+        box-shadow: 0px 0px 2rem rgba($bg,0.9)
+        border-top: solid 0.2rem $purple
+        justify-content: space-around
+        align-items: center
+        a
+            color: $white
+            // background: $bg
+            text-decoration: none
+            // padding: 0.5rem
+            // margin: 0.5rem 0
+            border-radius: 1rem
+            transition: all 0.2s ease
+            font-family: $darkmodeFont
+            font-weight: 600
+            font-size: 1.2rem
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            .Icons
+                width: 40px
+                height: 40px
+                        // background: $neon
+                border-radius: 50%
+                transition: background 0.2s ease
+                padding: 0.2rem
+
+                svg
+
+                    .svgNeon, .svgWhite, .svgPurple
+                        transition: fill 0.2s ease
+                        stroke-miterlimit: 10
+                        // stroke-width: 18px
+                    .svgWhite
+                        fill: $white
+                        stroke: $white
+
+                    .svgPurple
+                        fill: $purple
+                        stroke: $purple
+
+                    .svgNeon
+                        fill: $neon
+                        stroke: $neon
+                    .isolate
+                        isolation: isolate
+
+                &:hover, &:focus, &:active
+                    background: $neon
+                    svg
+                        filter: drop-shadow(0 0 0.2rem rgba($bg,0.5))
+                    .svgWhite
+                        fill: $bg
+                    .svgPurple
+                        fill: $neon
+                    .svgNeon
+                        fill: $bg
+            .LogoIcon
+                width: 40px
+                height: 40px
+                border: solid 0rem $purple
+                padding: 0.2rem
+                transition: border 0.2s ease
+                &:hover, &:focus, &:active
+                    background: $bg-gradient
+                    border: solid 0.2rem $neon
+                    .svgNeon
+                        fill: $purple
+                    .svgWhite
+                        fill: $white
+            &.router-link-exact-active
+                .Icons
+                    background: $neon
+                    svg
+                        filter: drop-shadow(0 0 0.2rem rgba($bg,0.5))
+                    .svgWhite
+                        fill: $bg
+                    .svgPurple
+                        fill: $neon
+                    .svgNeon
+                        fill: $bg
+                .LogoIcon
+                    background: $bg-gradient
+                    border: solid 0.2rem $neon
+                    .svgNeon
+                        fill: $purple
+                    .svgWhite
+                        fill: $white

@@ -1,3 +1,8 @@
+$phone: 768px
+$tablet: 1200px
+$desktop: 1600px
+@import include-media
+
 $purple: #9980FF
 $neon: #00F2DB
 $white: #EFF0FF
@@ -6,14 +11,14 @@ $bg-gradient: linear-gradient(50deg,#1C1846, #341E8B)
 $radius_1: 30px
 $radius_2: 10px
 
+$contentWidth: 85%
+$banner_gap: 2rem
 $currentColor: $purple
 
 $paddingNav: 0.4rem
-$menu-height: calc(50px + $paddingNav + $paddingNav)
-
-$phone: 600px
-$tablet: 800px
-$desktop: 1200px
+$mobileTopIcon: 35px
+$menu-height: calc(40px + $paddingNav + $paddingNav)
+$mobileTop_height: calc($mobileTopIcon + $paddingNav + $paddingNav - 10px)
 
 @import url("https://use.typekit.net/eak6pjs.css")
 @import url("https://use.typekit.net/hlx1ggc.css")
@@ -23,7 +28,7 @@ $riftFont: rift-soft, sans-serif
 
 /* width */
 ::-webkit-scrollbar
-    width: 14px
+    width: 5px
     background: $bg
 
 /* Track */
@@ -35,19 +40,23 @@ $riftFont: rift-soft, sans-serif
     background: $purple
     box-shadow: inset 0 0 2px rgba(0,0,0,0.6)
     border-radius: 10px
-    border: solid 3px $bg
+    // border: solid 3px $bg
 
 body
     margin: 0
     padding: 0
     font-family: $darkmodeFont
     font-style: normal
-    // background: $bg-gradient
+    background: $bg-gradient
 #app
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
     // margin: $menu-height 0 0 0
     padding: 0
+    // background: $bg-gradient
+    @include media('<phone')
+        margin-bottom: calc($menu-height - 10px)
+        margin-top: $mobileTop_height
 
 .PageFade-enter-active, .PageFade-leave-active
     transition: opacity 0.2s ease

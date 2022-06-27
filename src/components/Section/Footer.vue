@@ -3,7 +3,7 @@
 
 
     <!-- Sidemap -->
-    <div class="footerSpalte">
+    <div class="footerSpalte widthAuto">
 
       <router-link to="/proberaeume" class="sidemap">
         <img src="@/assets/Icons/Menu/proberaum_dark.svg" alt="">
@@ -41,7 +41,7 @@
     </div>
 
     <!-- Social Media -->
-    <div class="footerSpalte align_left">
+    <div class="footerSpalte align_left widthAuto">
       <div class="SocialMedia">
         <img src="@/assets/Icons/Footer/mail_dark.svg" alt="">contact@giggate.de
       </div>
@@ -61,7 +61,3 @@ export default {
 
 }
 </script>
-
-<style lang="scss">
-@import "@/sass/footer.sass";
-</style>

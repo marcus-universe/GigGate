@@ -4,6 +4,7 @@ import router from './router'
 import Vue3Lottie from 'vue3-lottie'
 import 'vue3-lottie/dist/style.css'
 import store from './store'
+// import VueFullscreen from 'vue-fullscreen'
 
 
 const app = createApp(App).use(store)

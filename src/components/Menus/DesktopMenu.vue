@@ -1,28 +1,36 @@
 <template>
 <div class="desktopNavBar">
-    <router-link
-        to="/"
-        class="LogoLink"><img src="../../assets/giggate_logo_round.svg" alt="Logo GigGate" class="logo">
-    </router-link>
+    <div class="navContent">
+        <router-link
+            to="/"
+            class="LogoLink"><img src="../../assets/giggate_logo_round.svg" alt="Logo GigGate" class="logo">
+        </router-link>
 
-    <div class="rightNav">
+        <div class="rightNav">
 
-        <Button1 v-if="!LoggedIn">Anmelden</Button1>
+            <Button1
+                v-if="!settings.loggedIn"
+                @buttonClicked="anmelden = true"
+                :action="true">Anmelden</Button1>
 
-        <Button1 CustomStyle="ButtonStyle3" v-if="!LoggedIn">Registrieren</Button1>
+            <Button1
+                CustomStyle="ButtonStyle3"
+                v-if="!settings.loggedIn">Registrieren</Button1>
 
-        <Bell @click="bellToggle" />
+            <Bell @click="bellToggle" />
 
-        <Vue3Lottie
-            ref="menuControl"
-            :animationData="MenuJSON"
-            class="MenuBurger"
-            :autoPlay="false"
-            :pauseAnimation="false"
-            direction="forward"
-            :loop="false"
-            @click="playmenu()" />
+            <Vue3Lottie
+                ref="menuControl"
+                :animationData="MenuJSON"
+                class="MenuBurger"
+                :autoPlay="false"
+                :pauseAnimation="false"
+                direction="forward"
+                :loop="false"
+                @click="playmenu()" />
+        </div>
     </div>
+
 </div>
 
 <DMenu
@@ -33,8 +41,10 @@
 
 <Notification :bellOpen="bellOpen" />
 
-<Anmelden/>
-
+    <Anmelden
+        @exit="anmelden = false"
+        :anmelden="anmelden"
+        />
 </template>
 
 <script>
@@ -52,7 +62,7 @@ import {
 } from '@/components/Elements/'
 
 export default {
-     components: {
+    components: {
         Vue3Lottie,
         DMenu,
         Bell,
@@ -69,12 +79,18 @@ export default {
             anmelden: false
         }
     },
+    computed: {
+        settings() {
+            return this.$store.state.settings
+        }
+
+    },
     props: {
         mobile: {
             type: Boolean,
             default: false,
         },
-   
+
     },
     methods: {
         playmenu() {
@@ -103,7 +119,6 @@ export default {
         },
     },
 }
-   
 </script>
 
 <style>

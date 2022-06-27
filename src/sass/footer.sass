@@ -1,5 +1,3 @@
-@import base
-
 .footer
     display: flex
     flex-direction: row
@@ -8,22 +6,41 @@
     padding: 2rem 10%
     min-height: 13rem
     background: $purple
+    @include media('<tablet')
+        flex-direction: column
+    @include media('<phone')
+        display: none
+    .widthAuto
+        width: auto !important
     .footerSpalte
         display: flex
         flex-direction: column
         justify-content: flex-start
-        align-items: end
+        align-items: flex-end
         padding: 0 2rem
         width: 25%
+        @include media('<tablet')
+            width: 100%
+            padding: 0
+            align-items: center
+            justify-content: center
+            flex-direction: row
+            flex-wrap: wrap
         &:first-child
             border-right: solid 1px $bg
+            @include media('<tablet')
+                border-right: none
+                border-bottom: solid 1px $bg
         &:last-child
             border-left: solid 1px $bg
+            @include media('<tablet')
+                border-left: none
+                border-top: solid 1px $bg
         .sidemap
             text-decoration: none
             font-family: $darkmodeFont
             font-weight: 600
-            font-size: 1rem
+            font-size: 0.85rem
             color: $bg
             text-align: right
             display: flex
@@ -46,7 +63,7 @@
             flex-direction: row
             justify-content: flex-start
             align-items: center
-            font-size: 1.1rem
+            font-size: 1rem
             color: $bg
             font-family: $darkmodeFont
             font-weight: 700

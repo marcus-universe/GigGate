@@ -1,50 +1,79 @@
 <template>
-    <section class="home">
-        <div class="HomeSection purpleBG">
-            <!-- <div class="JetztJammenBanner"></div> -->
-            <Banner :boxWidth="80" bannerClass="gradientBG SingleBanner" :pR="10" :videoActive="true">
+<section class="home">
+    <div class="purpleBG HomeSection">
+        <!-- <div class="JetztJammenBanner"></div> -->
+        <Banner
+            bannerClass="gradientBG SingleBanner"
+            :videoActive="true">
+            <template #title>
                 <H1Banner>Kein <b class="purpleText">Struggle</b>, <br> vor dem <b class="neonText">Jam</b>!</H1Banner>
                 <LinesStroke lineColor="purpleBG" />
+            </template>
+
+            <template #content>
                 <TextArticle1 textColor="whiteText">Deutschlandweit vollausgestattete Proberäume</TextArticle1>
-
-
-                <CallToActionButton ButtonStyle="ButtonStyle2" :ButtonCenter="true" link="proberaeume">Jetzt Jammen!
+                <CallToActionButton
+                    ButtonStyle="ButtonStyle2"
+                    :ButtonCenter="true"
+                    link="proberaeume">Jetzt Jammen!
                 </CallToActionButton>
+            </template>
 
-            </Banner>
-        </div>
+        </Banner>
+    </div>
 
-        <div class="HomeSection">
-            <Banner :boxWidth="50" bannerClass="purpleBG flex_row_reversed" :pL="3">
+    <div class="HomeSection">
+        <Banner bannerClass="purpleBG flex_row_reversed">
+            <template #title>
                 <H1Banner CustomStyle="bgText">Events</H1Banner>
                 <LinesStroke lineColor="bg" />
+            </template>
+
+            <template #content>
                 <TextArticle1 textColor="bgText">
-                    Spring auf die Bühne oder <br>erlebe Musik ganz neu <br>von der Community.
+                    Spring auf die Bühne oder erlebe Musik ganz neu von der Community.
                 </TextArticle1>
-                <CallToActionButton ButtonStyle="ButtonStyle2" :ButtonCenter="false" link="events">Unsere Events
+                <CallToActionButton
+                    ButtonStyle="ButtonStyle2"
+                    :ButtonCenter="element.ButtonCenter"
+                    link="events">Unsere Events
                 </CallToActionButton>
-            </Banner>
-            <Banner :boxWidth="50" bannerClass="neonBG flex_row_reversed" :pL="3">
+            </template>
+        </Banner>
+
+        <Banner bannerClass="neonBG flex_row_reversed">
+            <template #title>
                 <H1Banner CustomStyle="bgText">Community</H1Banner>
                 <LinesStroke lineColor="bg" />
+            </template>
+
+            <template #content>
                 <TextArticle1 textColor="bgText">
                     Tausche dich mit der Community aus, teile deine Musik mit anderen und finde neue Bandmitglieder zum
                     jammen.
                 </TextArticle1>
-
-
-                <CallToActionButton ButtonStyle="ButtonStyle1" :ButtonCenter="false" link="community">Zur Community
+                <CallToActionButton
+                    ButtonStyle="ButtonStyle1"
+                    :ButtonCenter="element.ButtonCenter"
+                    link="community">Zur Community
                 </CallToActionButton>
+            </template>
 
-            </Banner>
-        </div>
-    </section>
+        </Banner>
+    </div>
+</section>
 </template>
 
 <script>
 import Banner from '../components/Banner/BigBanner.vue'
-import { CallToActionButton, LinesStroke } from '../components/Elements'
-import { H1Banner, TextArticle1 } from '../components/Texte'
+import {
+    CallToActionButton,
+    LinesStroke
+} from '../components/Elements'
+import {
+    H1Banner,
+    TextArticle1
+} from '../components/Texte'
 
 export default {
     components: {
@@ -54,6 +83,10 @@ export default {
         H1Banner,
         TextArticle1
     },
-
+    computed: {
+        element() {
+            return this.$store.state.elements
+        },
+    },
 }
 </script>

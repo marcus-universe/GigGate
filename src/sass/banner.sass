@@ -1,0 +1,112 @@
+// ###############################
+// Banner
+// ###############################
+.Banners
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    min-height: 300px
+    border-radius: $radius_1
+    box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.5)
+    gap: $banner_gap
+    transition: box-shadow 0.3s ease-in-out
+    padding: 2rem $banner_gap
+    width: calc(42.5% - $banner_gap)
+    @include media('<tablet')
+        $banner_gap: 1rem
+        gap: $banner_gap
+        flex-wrap: wrap
+        justify-content: center
+    @include media('<phone')
+        width: calc(100% - $banner_gap - $banner_gap)
+        min-height: 200px
+        align-items: stretch
+        box-shadow: none
+        border-radius: 0
+
+    &.gradientBG
+        &:hover
+            box-shadow: 0 0rem 1rem rgba($bg,0.8)
+    &.purpleBG
+        &:hover
+            box-shadow: 0 0rem 1rem rgba($purple,0.8)
+    &.neonBG
+        &:hover
+            box-shadow: 0 0rem 1rem rgba($neon,0.8)
+    &:first-child
+        // margin-right: 1rem
+        // margin-left: 10%
+    &:last-child
+        // margin-right: 10%
+        // margin-left: 1rem
+    .videobox
+        display: flex
+        justify-content: center
+        flex-direction: column
+        width: auto
+        gap: 1rem
+        @include media('<tablet')
+            flex-direction: row
+            width: 100%
+            align-content: center
+        .videoplayer
+            aspect-ratio: 16/9
+            // min-height: 400px
+            border-radius: $radius_1
+            box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.5)
+            @include media('<phone')
+                width: 100%
+                // min-height: 300px
+    .imagebox
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        width: 60%
+        max-height: 450px
+        overflow: hidden
+        border-radius: $radius_1
+        @include media('<tablet')
+            width: 100%
+            min-height: 300px
+            margin-bottom: 1rem
+
+    .BannerTXTBox
+        // min-height: 200px
+        position: relative
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: stretch
+        width: clamp(200px, 50vw, 370px)
+        @include media('<phone')
+            width: clamp(400px, 50vw, 500px)
+
+        a
+            text-decoration: none
+        // align-items: center
+        .h1Banner
+            font-size: 4rem
+            font-family: $riftFont !important
+            font-weight: 700
+            color: $white
+            line-height: 1
+            margin: 0 0 0 0
+            padding: 0
+            @include media('<tablet')
+                font-size: 3.5rem
+                text-align: center
+
+        article
+            font-size: 1rem
+            font-weight: 500
+            font-family: $darkmodeFont
+            @include media('<phone')
+                font-size: 1rem
+                text-align: center
+
+.SingleBanner
+    width: calc($contentWidth + $banner_gap)
+    @include media('<phone')
+        width: calc(100% - $banner_gap*2)
+        margin-bottom: 1rem
+    // margin: 0 10% !important

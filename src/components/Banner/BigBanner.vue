@@ -1,23 +1,37 @@
 <template>
-    <div class="Banners" :class="[bannerClass]" :style="{
-        'width': boxWidth + '%', 'padding': 0 + ' ' + pR + '% ' + 0 + ' ' + pL + '% '
-    }">
+<div
+    class="Banners"
+    :class="[bannerClass]">
 
-        <div v-if="!videoActive" class="imagebox"
-            :style="{backgroundImage: 'url('+ require('@/assets/img/banner/events.jpg') +')'}">
-            <!-- <img :src="" alt=""> -->
-        </div>
-
-        <div v-if="videoActive" class="videobox">
-            <video class="videoplayer" controls :poster="require('@/assets/img/banner/events.jpg')">
-                <source src="#" type="video/mp4">
-            </video>
-        </div>
-
-        <div class="BannerTXTBox">
-            <slot></slot>
-        </div>
+    <div
+        class="BannerTXTBox"
+        v-if="settings.mobile || settings.tablet">
+        <slot name="title"></slot>
     </div>
+    <div
+        v-if="!videoActive"
+        class="imagebox"
+        :style="{backgroundImage: 'url('+ require('@/assets/img/banner/events.jpg') +')'}">
+        <!-- <img :src="" alt=""> -->
+    </div>
+
+    <div
+        v-if="videoActive"
+        class="videobox">
+        <video class="videoplayer" controls :poster="require('@/assets/img/banner/events.jpg')">
+            <source
+                src="#"
+                type="video/mp4">
+        </video>
+    </div>
+
+    <div class="BannerTXTBox">
+        <slot
+            name="title"
+            v-if="!settings.mobile && !settings.tablet"></slot>
+        <slot name="content"></slot>
+    </div>
+</div>
 </template>
 
 <script>
@@ -39,15 +53,12 @@ export default {
             type: String,
             default: 'events'
         },
-
-        pL: {
-            type: Number,
-            default: 0
+    },
+    computed: {
+        settings() {
+            return this.$store.state.settings
         },
-        pR: {
-            type: Number,
-            default: 0
-        }
+        
     }
 }
 </script>
