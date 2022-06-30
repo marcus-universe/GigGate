@@ -1,50 +1,31 @@
 <template>
-<div class="desktopNavBar">
-    <div class="navContent">
-        <router-link
-            to="/"
-            class="LogoLink"><img src="../../assets/giggate_logo_round.svg" alt="Logo GigGate" class="logo">
-        </router-link>
+    <div class="desktopNavBar" :class="{noShadow: bellOpen}">
+        <div class="navContent">
+            <router-link to="/" class="LogoLink"><img src="../../assets/giggate_logo_round.svg" alt="Logo GigGate"
+                    class="logo">
+            </router-link>
 
-        <div class="rightNav">
+            <div class="rightNav">
 
-            <Button1
-                v-if="!settings.loggedIn"
-                @buttonClicked="anmelden = true"
-                :action="true">Anmelden</Button1>
+                <Button1 v-if="!settings.loggedIn" @buttonClicked="anmelden = true" :action="true">Anmelden</Button1>
 
-            <Button1
-                CustomStyle="ButtonStyle3"
-                v-if="!settings.loggedIn">Registrieren</Button1>
+                <Button1 CustomStyle="ButtonStyle3" v-if="!settings.loggedIn">Registrieren</Button1>
 
-            <Bell @click="bellToggle" />
+                <Bell @click="bellToggle" :bellOpen="bellOpen" />
 
-            <Vue3Lottie
-                ref="menuControl"
-                :animationData="MenuJSON"
-                class="MenuBurger"
-                :autoPlay="false"
-                :pauseAnimation="false"
-                direction="forward"
-                :loop="false"
-                @click="playmenu()" />
+                <Vue3Lottie ref="menuControl" :animationData="MenuJSON" class="MenuBurger" :autoPlay="false"
+                    :pauseAnimation="false" direction="forward" :loop="false" @click="playmenu()" />
+            </div>
         </div>
+
     </div>
 
-</div>
+    <DMenu :mobile="mobile" :menuOpen="menuOpen" @playmenu="playmenu">
+    </DMenu>
 
-<DMenu
-    :mobile="mobile"
-    :menuOpen="menuOpen"
-    @playmenu="playmenu">
-</DMenu>
+    <Notification :bellOpen="bellOpen" />
 
-<Notification :bellOpen="bellOpen" />
-
-    <Anmelden
-        @exit="anmelden = false"
-        :anmelden="anmelden"
-        />
+    <Anmelden @exit="anmelden = false" :anmelden="anmelden" />
 </template>
 
 <script>

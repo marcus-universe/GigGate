@@ -9,7 +9,7 @@
         </div>
         <div class="setting">
             <label for="Mobile">Benachrichtigungen</label>
-            <input type="number" name="mobilemode" id="mobilemode">
+            <input type="number" name="mobilemode" id="mobilemode" min="0" :max="maxNoftiy">
         </div>
     </div>
 </div>
@@ -17,6 +17,23 @@
 
 <script>
 export default {
-
+    data() {
+        return {
+            maxNoftiy: 4,
+        }
+    },
+    computed: {
+        settings() {
+            return this.$store.state.settings
+        }
+    },
+    mounted() {
+        if (this.settings.loggedIn) {
+            this.maxNoftiy = 4
+        } else {
+            this.maxNoftiy = 2
+        }
+        this.settings.bellNumber = this.maxNoftiy
+    },
 }
 </script>

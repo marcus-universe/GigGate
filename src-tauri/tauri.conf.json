@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "giggate",
-    "version": "0.1.0"
+    "version": "1.0.1"
   },
   "tauri": {
     "allowlist": {
@@ -35,7 +35,7 @@
         "entitlements": null,
         "exceptionDomain": "",
         "frameworks": [],
-        "providerShortName": null,
+        "providerShortName": "Marcus Harting",
         "signingIdentity": null
       },
       "resources": [],
@@ -59,7 +59,9 @@
         "fullscreen": false,
         "height": 600,
         "width": 800,
-        "resizable": true
+        "resizable": true,
+        "center": true,
+        "alwaysOnTop": true
       },
       {
         "label": "settings",
