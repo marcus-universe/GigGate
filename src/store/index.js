@@ -54,6 +54,37 @@ export default createStore({
         button: "Community"
       }
     ],
+    comments: [{
+      id: 1,
+      name: "Frank",
+      img: "frank",
+      comment: "Dank Giggate kann ich nun richtig in die Drums hauen ohne das meine Nachbarn wieder an der Tür klopfen."
+    },
+      {
+        id: 2,
+        name: "Josh",
+        img: "josh",
+        comment: "Das letzte Rock-Event war der Hammer. Ich habe ne geile E-Gitarre bekommen und konnte auf der Bühne richtig abrocken. Nächstes mal bin ich sicher wieder dabei."
+      },
+      {
+        id: 3,
+        name: "Jule",
+        img: "jule",
+        comment: "Die Giggate Proberäume sind ein super Treffpunkt, um neue Musiker zu treffen und gemeinsam zu jammen. Habe viele coole Musiker kennengelernt. Danke Giggate! 😊"
+      },
+      {
+        id: 4,
+        name: "Lisa",
+        img: "lisa",
+        comment: "Ein super Ort für mich, um in Ruhe, ungestört, Piano zu spielen. Genau wonach ich gesucht habe. ❤"
+      },
+      {
+        id: 5,
+        name: "William",
+        img: "william",
+        comment: "Vollausgestattete Proberäume, mega Events und coole Musiker die man trifft. Was will man mehr? Es ist der Himmel für jeden Musiker und ich freu mich schon auf mein nächsten Gig 😎🎸"
+      },
+    ]
   },
   getters: {},
   mutations: {},

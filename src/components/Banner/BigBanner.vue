@@ -11,7 +11,7 @@
     <div
         v-if="!videoActive"
         class="imagebox"
-        :style="{backgroundImage: 'url('+ require('@/assets/img/banner/events.jpg') +')'}">
+        :style="{backgroundImage: 'url('+ require('@/assets/img/banner/' + image +'.jpg') +')'}">
         <!-- <img :src="" alt=""> -->
     </div>
 

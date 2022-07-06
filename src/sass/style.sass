@@ -32,6 +32,55 @@
             background: rgba($bg, 0) !important
 
 // ###############################
+// Comment Section
+// ###############################
+.commentContainer
+    background: $purple
+    padding: 2rem 0rem
+    h2
+
+        color: $white
+        font-size: 2.5rem
+        font-weight: bold
+        margin: 0
+        padding: 0
+        text-align: center
+    .commentSlide
+        max-height: 500px
+        overflow-x: scroll
+        padding: 2rem 1rem
+        border: none
+        // height: 70vh
+        gap: 1rem
+        align-items: stretch
+        .comment
+            background: $white
+            padding: 2rem
+            border-radius: $radius_1
+            min-width: 500px
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+            @include media('<phone')
+                min-width: calc(80vw - 4rem)
+
+            .commentInfo
+                align-items: center
+                gap: 1rem
+                img
+                    width: 25%
+                    max-width: 80px
+                    height: auto
+                    object-fit: cover
+                    border-radius: 50%
+                h3
+                    font-size: 1.2rem
+                    font-weight: bold
+                    color: $purple
+                    margin: 0
+
+            .comment_text
+                font-size: 1rem
+
+// ###############################
 // Buttons
 // ###############################
 
@@ -72,6 +121,11 @@
     background: $bg
     color: $white
     transition: background 0.2s ease, color 0.2s ease
+    // font-size: 0.8rem
+    gap: 1rem
+    img
+        width: 2.5rem
+        height: 2.5rem
     &:hover, &:focus, &:active
         background: $white
         color: $bg
@@ -95,97 +149,18 @@
         color: $bg
         text-decoration: none
 
-// ###############################
-// Variables
-// ###############################
-section
-    min-height: 70vh
-    margin-top: $menu-height
-    background: $bg-gradient
-    margin-bottom: $menu-height
+.ButtonStyle4
+    background: $white
+    color: $purple
+    transition: background 0.2s ease, color 0.2s ease
+    // font-size: 1rem
+    gap: 1rem
+    img
+        width: 3rem
+        height: 3rem
+    &:hover, &:focus, &:active
+        background: $white
+        color: $bg
+        text-decoration: none
 
-    @include media('<phone')
-        height: calc(100vh - $menu-height - $mobileTop_height + 0.5rem)
-        overflow: scroll
-        margin-bottom: 0
-        margin-top: 0
-
-.icon_1
-    fill: $neon
-    transition: fill 0.2s ease
-svg
-    &:hover
-        cursor: pointer
-        .icon_1
-            fill: $white
-
-.flex_center_h
-    display: flex
-    flex-direction: row
-    justify-content: center
-
-.flex_row_reversed
-    flex-direction: row-reverse
-
-.flex_start
-    justify-content: flex-start
-.align_center
-    align-items: center !important
-.align_left
-    align-items: flex-start !important
-
-.bg
-    background: $bg !important
-
-.purpleBG
-    background: $purple !important
-
-.neonBG
-    background: $neon !important
-
-.gradientBG
-    background: $bg-gradient !important
-
-.purpleText
-    color: $purple !important
-
-.neonText
-    color: $neon !important
-
-.whiteText
-    color: $white !important
-.bgText
-    color: $bg !important
-
-.line
-    width: 100%
-    height: 1px
-    background: $purple
-    margin: 1rem auto
-.lineAnmelden
-    width: $innerWidthAnmelden
-    margin: 0 auto 1rem auto
-
-.blurBG
-    position: fixed
-    z-index: 1
-    background: rgba($bg, 0.5)
-    width: 100%
-    height: 100%
-    backdrop-filter: blur(20px)
-
-.noShadow
-    box-shadow: none !important
-
-.anmeldeAnim-enter-from, .anmeldeAnim-leave-to
-    opacity: 0
-    top: 50%
-    left: 50%
-    transform: translateX(-50%) translateY(-50%) scale(0)
-.anmeldeAnim-enter-to, .anmeldeAnim-leave-from
-    opacity: 1
-    top: 50%
-    left: 50%
-    transform: translateX(-50%) translateY(-50%) scale(1)
-.anmeldeAnim-enter-active, .anmeldeAnim-leave-active
-    transition: all 0.3s ease
+@import variables

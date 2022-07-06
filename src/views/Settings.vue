@@ -1,26 +1,53 @@
 <template>
-<div class="settings">
-    <h1>Settings</h1>
+    <div class="settings">
+        <h1>Settings</h1>
 
-    <div class="settingContainer">
-        <div class="setting">
-            <label for="Mobile">Mobile Ansicht</label>
-            <input type="checkbox" name="mobilemode" id="mobilemode">
-        </div>
-        <div class="setting">
-            <label for="Mobile">Benachrichtigungen</label>
-            <input type="number" name="mobilemode" id="mobilemode" min="0" :max="maxNoftiy">
+        <div class="settingContainer">
+            <div class="setting">
+                <label for="IsFullscreen">Fullscreen</label>
+                <input type="checkbox" name="IsFullscreen" id="IsFullscreen" v-model="IsFullscreen"
+                    @change="FullscreenMode">
+            </div>
+            <LinesStroke lineColor="lineMargin_small" />
+            <div class="setting">
+                <label for="AlwaysOnTop">Fenster im Vordergrund</label>
+                <input type="checkbox" name="AlwaysOnTop" id="AlwaysOnTop" v-model="AlwaysOnTop"
+                    @change="AlwaysOnTopMode">
+            </div>
+            <LinesStroke lineColor="lineMargin_small" />
+            <div class="setting">
+                <label for="mobilemode">Mobile Ansicht</label>
+                <input type="checkbox" name="mobilemode" id="mobilemode" v-model="IsMobile" @change="mobileMode">
+            </div>
+            <LinesStroke lineColor="lineMargin_small" />
+            <div class="setting">
+                <label for="notify">Benachrichtigungen</label>
+                <input type="number" name="notifyNumber" id="notify" min="0" :max="maxNoftiy">
+            </div>
         </div>
     </div>
-</div>
 </template>
 
 <script>
+import {
+    WebviewWindow, LogicalSize, LogicalPosition
+} from '@tauri-apps/api/window'
+import {
+    LinesStroke
+} from '@/components/Elements'
+
 export default {
     data() {
         return {
             maxNoftiy: 4,
+            IsMobile: false,
+            IsFullscreen: false,
+            AlwaysOnTop: false,
+            mainWindow: WebviewWindow.getByLabel('giggate')
         }
+    },
+    components: {
+        LinesStroke,
     },
     computed: {
         settings() {
@@ -34,6 +61,38 @@ export default {
             this.maxNoftiy = 2
         }
         this.settings.bellNumber = this.maxNoftiy
+    },
+    methods: {
+        FullscreenMode() {
+            // check if mobile mode is checked
+            if (this.IsFullscreen) {
+                this.mainWindow.setFullscreen(true)
+            } else {
+                this.mainWindow.setFullscreen(false)
+                this.mainWindow.setSize(new LogicalSize(1200, 800))
+                this.mainWindow.setPosition(new LogicalPosition(0, 0))
+            }
+        },
+
+        AlwaysOnTopMode() {
+            // check if mobile mode is checked
+            if (this.AlwaysOnTop) {
+                this.mainWindow.setAlwaysOnTop(true)
+            } else {
+                this.mainWindow.setAlwaysOnTop(false)
+            }
+        },
+
+        mobileMode() {
+            // check if mobile mode is checked
+            if (this.IsMobile) {
+                this.mainWindow.setSize(new LogicalSize(380, 750))
+                this.mainWindow.setPosition(new LogicalPosition(0, 0))
+            } else {
+                this.mainWindow.setSize(new LogicalSize(1200, 800))
+                this.mainWindow.setPosition(new LogicalPosition(0, 0))
+            }
+        },
     },
 }
 </script>

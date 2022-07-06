@@ -1,5 +1,5 @@
 <template>
-    <div class="line" :class="[lineColor]"></div>
+    <div class="line" :class="[lineColor]" :style="{'margin': space + 'rem auto' }"></div>
 </template>
 
 <script>
@@ -8,6 +8,10 @@ export default {
         lineColor: {
             type: String,
             default: 'purpleBG'
+        },
+        space: {
+            type: Number,
+            default: 1
         }
     },
 }

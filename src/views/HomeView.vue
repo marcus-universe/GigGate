@@ -41,7 +41,7 @@
             </template>
         </Banner>
 
-        <Banner bannerClass="neonBG flex_row_reversed">
+        <Banner bannerClass="neonBG flex_row_reversed" image="community">
             <template #title>
                 <H1Banner CustomStyle="bgText">Community</H1Banner>
                 <LinesStroke lineColor="bg" />
@@ -61,11 +61,13 @@
 
         </Banner>
     </div>
+<CommentSlider />
 </section>
 </template>
 
 <script>
 import Banner from '../components/Banner/BigBanner.vue'
+import CommentSlider from '@/components/Section/CommentSlider.vue'
 import {
     CallToActionButton,
     LinesStroke
@@ -81,7 +83,8 @@ export default {
         CallToActionButton,
         LinesStroke,
         H1Banner,
-        TextArticle1
+        TextArticle1,
+        CommentSlider
     },
     computed: {
         element() {

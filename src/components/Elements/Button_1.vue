@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  emits: ['buttonClicked'],
+  emits: ['buttonClicked'], 
     props: {
        link: {
             type: String,

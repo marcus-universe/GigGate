@@ -1,17 +1,20 @@
 <template>
     <div class="MobileNavLeiste">
+
+
         <nav class="topMobileBar" :class="{noShadow: bellOpen}">
             <div class="alignMobileNav">
                 <div class="profile">
-                    <img src="@/assets/img/profile/profile.jpg" alt="" class="icon">
+                    <img src="@/assets/img/profile/profile.jpg" alt="Profile Image" class="icon" @click="profileToggle">
                 </div>
                 <div class="options">
+                    <img src="@/assets/Icons/Menu/upload_purple.svg" alt="" class="icon mobileOption"/>
+                    
                     <Bell @click="bellToggle" :bellOpen="bellOpen" />
-
-                    <img src="@/assets/Icons/Menu/mobile_options.svg" alt="" class="icon mobileOption">
                 </div>
             </div>
         </nav>
+
         <nav class="flex_center_h bottomMobileBar">
 
             <MobileIcon link="./community">
@@ -148,6 +151,9 @@
         </nav>
 
     </div>
+
+    <Profile :profileOpen="profileOpen" />
+
     <Notification :bellOpen="bellOpen" />
 </template>
 
@@ -155,21 +161,29 @@
 import MobileIcon from './MobileIcons.vue'
 import Bell from './Bell.vue'
 import Notification from './SubOpen/Notification.vue'
+import Profile from './SubOpen/Profile.vue'
 
 export default {
     components: {
         MobileIcon,
         Bell,
-        Notification
+        Notification,
+        Profile
     },
     data() {
         return {
-            bellOpen: false
+            bellOpen: false,
+            profileOpen: false
         }
     },
     methods: {
         bellToggle() {
             this.bellOpen = !this.bellOpen
+            this.profileOpen = false
+        },
+        profileToggle() {
+            this.profileOpen = !this.profileOpen
+            this.bellOpen = false
         }
     }
     

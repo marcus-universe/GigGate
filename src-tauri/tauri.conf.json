@@ -57,11 +57,14 @@
         "label": "giggate",
         "title": "GigGate",
         "fullscreen": false,
+        "alwaysOnTop": false,
+        "maximized": true,
         "height": 600,
         "width": 800,
+        "minWidth": 200,
+        "focus": true,
         "resizable": true,
-        "center": true,
-        "alwaysOnTop": true
+        "center": true
       },
       {
         "label": "settings",
@@ -69,6 +72,7 @@
         "url": "/#/settings",
         "width": 300,
         "height": 800,
+        "maxWidth": 500,
         "resizable": true
       }
     ]

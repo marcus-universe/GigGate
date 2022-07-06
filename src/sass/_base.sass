@@ -27,20 +27,22 @@ $mobileTop_height: calc($mobileTopIcon + $paddingNav + $paddingNav - 10px)
 $darkmodeFont: darkmode-off, sans-serif
 $riftFont: rift-soft, sans-serif
 
+$scrollbarSize: 0.5rem
 /* width */
 ::-webkit-scrollbar
-    width: 5px
+    width: $scrollbarSize
+    height: $scrollbarSize
     background: $bg
 
 /* Track */
 ::-webkit-scrollbar-track
-    border-radius: 10px
+    // border-radius: 10px
 
 /* Handle */
 ::-webkit-scrollbar-thumb
     background: $purple
-    box-shadow: inset 0 0 2px rgba(0,0,0,0.6)
-    border-radius: 10px
+    // box-shadow: inset 0 0 2px rgba(0,0,0,0.6)
+    // border-radius: 10px
     // border: solid 3px $bg
 
 body

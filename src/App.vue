@@ -16,6 +16,8 @@
 </template>
 
 <script>
+
+
 // import {computed} from 'vue'
 import DesktopMenu from './components/Menus/DesktopMenu.vue'
 import MobileMenu from './components/Menus/MobileMenu.vue'
@@ -40,7 +42,7 @@ export default {
         },
     },
     mounted() {
-        // Toogle Fullscreen Mode
+         // Toogle Fullscreen Mode
         function getFullscreenElement() {
             return document.fullscreenElement ||
                 document.webkitFullscreenElement ||
