@@ -5,10 +5,10 @@ section
     min-height: 70vh
     margin-top: $menu-height
     background: $bg-gradient
-    margin-bottom: $menu-height
     padding-bottom: $menu-height
 
     @include media('<phone')
+        // margin-bottom: $menu-height
         height: calc(100vh - $menu-height - $mobileTop_height)
         overflow-y: scroll
         margin-bottom: 0
@@ -30,6 +30,13 @@ svg
     flex-direction: row
     justify-content: center
 
+.flex_center_h_mobileSwitch
+    display: flex
+    flex-direction: row
+    justify-content: center
+    @include media('<phone')
+        flex-direction: column
+
 .flex_center_v
     display: flex
     flex-direction: column
@@ -41,6 +48,9 @@ svg
 .flex_start
     justify-content: flex-start
 
+.flex_end
+    justify-content: flex-end
+
 .flex_between
     justify-content: space-between
 
@@ -48,6 +58,23 @@ svg
     align-items: center !important
 .align_left
     align-items: flex-start !important
+
+.absoluteBottomCenter
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+
+.bottom2
+    bottom: 2rem
+    @include media('<phone')
+        bottom: calc(2rem + $menu-height)
+
+.gap2
+    gap: 2rem
+
+.gap1
+    gap: 1rem
 
 .text_left
     text-align: left
@@ -139,3 +166,43 @@ svg
 .leftSwipe-enter-to, .leftSwipe-leave-from
     opacity: 1
     left: 0
+
+.rightSwipe-enter-active, .rightSwipe-leave-active
+    transition: opacity 0.3s ease, right 0.3s ease
+.rightSwipe-enter-from, .rightSwipe-leave-to
+    opacity: 0
+    right: -100%
+.rightSwipe-enter-to, .rightSwipe-leave-from
+    opacity: 1
+    right: 0
+
+.fade-enter-active, .fade-leave-active
+    transition: opacity 0.2s ease
+.fade-enter-from, .fade-leave-to
+    opacity: 0
+.fade-enter-to, .fade-leave-from
+    opacity: 1
+
+.equalWidth
+    flex: 1
+
+.width100
+    width: 100vw
+
+.width80p
+    width: 80%
+
+.width100p
+    width: 100%
+
+.paddingWindow
+    justify-content: center !important
+    width: calc(85% + 5rem) !important
+    align-items: stretch !important
+    @include media('<=tablet')
+        width: 95% !important
+        margin-left: 2.5% !important
+    @include media('<phone')
+        margin-left: 0 !important
+        width: 100% !important
+        align-items: center !important

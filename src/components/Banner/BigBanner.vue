@@ -5,13 +5,13 @@
 
     <div
         class="BannerTXTBox"
-        v-if="settings.mobile || settings.tablet">
+        v-if="titleSwitch === true">
         <slot name="title"></slot>
     </div>
     <div
         v-if="!videoActive"
         class="imagebox"
-        :style="{backgroundImage: 'url('+ require('@/assets/img/banner/' + image +'.jpg') +')'}">
+        :style="{ backgroundImage: 'url(' + require('@/assets/img/banner/' + image +'.jpg') +')'}">
         <!-- <img :src="" alt=""> -->
     </div>
 
@@ -28,7 +28,7 @@
     <div class="BannerTXTBox">
         <slot
             name="title"
-            v-if="!settings.mobile && !settings.tablet"></slot>
+            v-if="titleSwitch === false"></slot>
         <slot name="content"></slot>
     </div>
 </div>
@@ -36,6 +36,11 @@
 
 <script>
 export default {
+    data() {
+        return {
+            titleSwitch: false,
+        }
+    },
     props: {
         boxWidth: {
             type: Number,
@@ -58,7 +63,22 @@ export default {
         settings() {
             return this.$store.state.settings
         },
-        
-    }
+
+    },
+    mounted() {
+        if (this.settings.mobile === true || this.settings.tablet === true) {
+            this.titleSwitch = true
+        } else {
+            this.titleSwitch = false
+        }
+
+        window.addEventListener('resize', () => {
+            if (this.settings.mobile === true || this.settings.tablet === true) {
+                this.titleSwitch = true
+            } else {
+                this.titleSwitch = false
+            }
+        })
+    },
 }
 </script>

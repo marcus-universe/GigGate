@@ -30,7 +30,7 @@
 
 <script>
 import {
-    WebviewWindow, LogicalSize, LogicalPosition
+    WebviewWindow, LogicalSize, 
 } from '@tauri-apps/api/window'
 import {
     LinesStroke
@@ -69,8 +69,8 @@ export default {
                 this.mainWindow.setFullscreen(true)
             } else {
                 this.mainWindow.setFullscreen(false)
-                this.mainWindow.setSize(new LogicalSize(1200, 800))
-                this.mainWindow.setPosition(new LogicalPosition(0, 0))
+                this.mainWindow.setSize(new LogicalSize(1920, 1080))
+                // this.mainWindow.setPosition(new LogicalPosition(0, 0))
             }
         },
 
@@ -87,10 +87,10 @@ export default {
             // check if mobile mode is checked
             if (this.IsMobile) {
                 this.mainWindow.setSize(new LogicalSize(380, 750))
-                this.mainWindow.setPosition(new LogicalPosition(0, 0))
+                // this.mainWindow.setPosition(new LogicalPosition(0, 0))
             } else {
-                this.mainWindow.setSize(new LogicalSize(1200, 800))
-                this.mainWindow.setPosition(new LogicalPosition(0, 0))
+                this.mainWindow.setSize(new LogicalSize(1920, 1080))
+                // this.mainWindow.setPosition(new LogicalPosition(0, 0))
             }
         },
     },

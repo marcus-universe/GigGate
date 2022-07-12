@@ -2,15 +2,14 @@
     <div class="MobileNavLeiste">
 
 
-        <nav class="topMobileBar" :class="{noShadow: bellOpen}">
+        <nav class="topMobileBar" :class="{ noShadow: settings.bellOpen || settings.profileOpen }">
             <div class="alignMobileNav">
                 <div class="profile">
                     <img src="@/assets/img/profile/profile.jpg" alt="Profile Image" class="icon" @click="profileToggle">
                 </div>
-                <div class="options">
-                    <img src="@/assets/Icons/Menu/upload_purple.svg" alt="" class="icon mobileOption"/>
-                    
-                    <Bell @click="bellToggle" :bellOpen="bellOpen" />
+                <div class="upload">
+                    <UploadButton customClass="icon mobileOption" />
+                    <Bell @click="bellToggle" :bellOpen="settings.bellOpen" />
                 </div>
             </div>
         </nav>
@@ -152,9 +151,9 @@
 
     </div>
 
-    <Profile :profileOpen="profileOpen" />
-
-    <Notification :bellOpen="bellOpen" />
+    <Profile :profileOpen="settings.profileOpen" />
+    <UploadArea /> 
+    <Notification :bellOpen="settings.bellOpen" />
 </template>
 
 <script>
@@ -162,28 +161,33 @@ import MobileIcon from './MobileIcons.vue'
 import Bell from './Bell.vue'
 import Notification from './SubOpen/Notification.vue'
 import Profile from './SubOpen/Profile.vue'
+import UploadButton from '@/components/Elements/UploadButton.vue'
+import UploadArea from '@/components/Menus/SubOpen/UploadArea.vue'
 
 export default {
     components: {
         MobileIcon,
         Bell,
         Notification,
-        Profile
+        Profile,
+        UploadButton,
+        UploadArea
     },
-    data() {
-        return {
-            bellOpen: false,
-            profileOpen: false
+    computed: {
+        settings() {
+            return this.$store.state.settings
         }
     },
     methods: {
         bellToggle() {
-            this.bellOpen = !this.bellOpen
-            this.profileOpen = false
+            this.settings.bellOpen = !this.settings.bellOpen
+            this.settings.profileOpen = false
+            this.settings.uploadOpen = false
         },
         profileToggle() {
-            this.profileOpen = !this.profileOpen
-            this.bellOpen = false
+            this.settings.profileOpen = !this.settings.profileOpen
+            this.settings.bellOpen = false
+            this.settings.uploadOpen = false
         }
     }
     

@@ -5,10 +5,15 @@ import {
 export default createStore({
   state: {
     settings: {
-      loggedIn: false,
+      loggedIn: true,
       mobile: false,
       tablet: false,
-      bellNumber: 4,
+      bellNumber: 2,
+      profileOpen: false,
+      bellOpen: false,
+      NotifyNumber: 4,
+      deletedNotify: false,
+      uploadOpen: false
     },
     elements: {
       ButtonCenter: false,

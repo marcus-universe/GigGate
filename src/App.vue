@@ -16,8 +16,6 @@
 </template>
 
 <script>
-
-
 // import {computed} from 'vue'
 import DesktopMenu from './components/Menus/DesktopMenu.vue'
 import MobileMenu from './components/Menus/MobileMenu.vue'
@@ -42,13 +40,14 @@ export default {
         },
     },
     mounted() {
-         // Toogle Fullscreen Mode
+        // Toogle Fullscreen Mode
         function getFullscreenElement() {
             return document.fullscreenElement ||
                 document.webkitFullscreenElement ||
                 document.mozFullScreenElement ||
                 document.msFullscreenElement
         }
+
         function toggleFullscreen() {
             if (getFullscreenElement()) {
                 document.exitFullscreen()
@@ -60,30 +59,28 @@ export default {
             toggleFullscreen()
         })
 
+        if (window.innerWidth <= 768) {
+            this.settings.mobile = true
+            this.settings.tablet = false
+            this.elements.ButtonCenter = true
+        } else if (window.innerWidth <= 1200) {
+            this.settings.mobile = false
+            this.settings.tablet = true
+            this.elements.ButtonCenter = true
+        } else {
+            this.settings.mobile = false
+            this.settings.tablet = false
+            this.elements.ButtonCenter = false
+        }
 
-
-           if (window.innerWidth < 1200) {
-                this.settings.mobile = false
-                this.settings.tablet = true
-                this.elements.ButtonCenter = false
-            } if (window.innerWidth < 768) {
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 768) {
                 this.settings.mobile = true
                 this.settings.tablet = false
                 this.elements.ButtonCenter = true
-            } else {
-                this.settings.mobile = false
-                this.settings.tablet = false
-                this.elements.ButtonCenter = false
-            }
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth < 1200) {
+            } else if (window.innerWidth <= 1200) {
                 this.settings.mobile = false
                 this.settings.tablet = true
-                this.elements.ButtonCenter = false
-            } if (window.innerWidth < 768) {
-                this.settings.mobile = true
-                this.settings.tablet = false
                 this.elements.ButtonCenter = true
             } else {
                 this.settings.mobile = false
@@ -94,10 +91,10 @@ export default {
     },
     data() {
         return {
-           
+
         }
     },
-    
+
 }
 </script>
 

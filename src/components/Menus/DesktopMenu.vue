@@ -10,9 +10,13 @@
                 <Button1 v-if="!settings.loggedIn" @buttonClicked="anmelden = true" :action="true">Anmelden</Button1>
 
                 <Button1 CustomStyle="ButtonStyle3" v-if="!settings.loggedIn">Registrieren</Button1>
+                <UploadButton v-if="settings.loggedIn" customClass="" />
 
-                <Bell @click="bellToggle" :bellOpen="bellOpen" />
 
+                <Bell @click="bellToggle" :bellOpen="settings.bellOpen" />
+                <div class="profile" v-if="settings.loggedIn">
+                    <img src="@/assets/img/profile/profile.jpg" alt="Profile Image" class="icon" @click="profileToggle">
+                </div>
                 <Vue3Lottie ref="menuControl" :animationData="MenuJSON" class="MenuBurger" :autoPlay="false"
                     :pauseAnimation="false" direction="forward" :loop="false" @click="playmenu()" />
             </div>
@@ -23,9 +27,11 @@
     <DMenu :mobile="mobile" :menuOpen="menuOpen" @playmenu="playmenu">
     </DMenu>
 
-    <Notification :bellOpen="bellOpen" />
+    <Profile :profileOpen="settings.profileOpen" />
+    <UploadArea />
+    <Notification :bellOpen="settings.bellOpen" />
 
-    <Anmelden @exit="anmelden = false" :anmelden="anmelden" />
+    <Anmelden @exit="anmelden = false, this.settings.bellNumber = 2" :anmelden="anmelden" />
 </template>
 
 <script>
@@ -38,8 +44,10 @@ import DMenu from './SubOpen/DMenu.vue'
 import Bell from './Bell.vue'
 import Notification from './SubOpen/Notification.vue'
 import Anmelden from './SubOpen/Anmelden.vue'
+import Profile from './SubOpen/Profile.vue'
+import UploadArea from './SubOpen/UploadArea.vue'
 import {
-    Button1
+    Button1, UploadButton
 } from '@/components/Elements/'
 
 export default {
@@ -49,7 +57,10 @@ export default {
         Bell,
         Notification,
         Button1,
-        Anmelden
+        Anmelden,
+        Profile,
+        UploadButton,
+        UploadArea,
     },
     data() {
         return {
@@ -57,7 +68,8 @@ export default {
             direction: 'reverse',
             menuOpen: false,
             bellOpen: false,
-            anmelden: false
+            anmelden: false,
+            profileOpen: false,
         }
     },
     computed: {
@@ -90,7 +102,8 @@ export default {
             }
         },
         bellToggle() {
-            this.bellOpen = !this.bellOpen
+            this.settings.bellOpen = !this.settings.bellOpen
+            this.settings.profileOpen = false
             if (this.menuOpen === true && this.direction === "forward") {
                 this.$refs['menuControl'].setDirection("reverse")
                 this.$refs['menuControl'].play()
@@ -98,6 +111,10 @@ export default {
                 this.menuOpen = false
             }
         },
+        profileToggle() {
+            this.settings.profileOpen = !this.settings.profileOpen
+            this.settings.bellOpen = false
+        }
     },
 }
 </script>
