@@ -6,6 +6,13 @@ section
     margin-top: $menu-height
     background: $bg-gradient
     padding-bottom: $menu-height
+    h1
+        color: $bg
+        font-size: clamp(2.5rem, 8vw, 3.5rem)
+        font-weight: bold
+        margin: 0
+        padding: 0
+        text-align: center
 
     @include media('<phone')
         // margin-bottom: $menu-height
@@ -69,6 +76,9 @@ svg
     bottom: 2rem
     @include media('<phone')
         bottom: calc(2rem + $menu-height)
+
+.gap4
+    gap: 4rem
 
 .gap2
     gap: 2rem

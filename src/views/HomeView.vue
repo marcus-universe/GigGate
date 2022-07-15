@@ -10,7 +10,7 @@
                 </template>
 
                 <template #content>
-                    <TextArticle1 textColor="whiteText">Deutschlandweit vollausgestattete Proberäume</TextArticle1>
+                    <TextArticle1 textColor="whiteText mainArticle">Deutschlandweit vollausgestattete Proberäume</TextArticle1>
                     <CallToActionButton ButtonStyle="ButtonStyle2" :ButtonCenter="true" link="proberaeume">Jetzt Jammen!
                     </CallToActionButton>
                 </template>

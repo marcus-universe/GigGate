@@ -35,6 +35,11 @@ export default {
             return this.$store.state.settings
         },
     },
+    mounted() {
+        if (this.settings.mobile === true && this.settings.deletedNotify === false) {
+            this.settings.bellNumber = 4
+        }
+    },
 
 }
 </script>

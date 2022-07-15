@@ -198,6 +198,87 @@
         color: $bg
         text-decoration: none
 
+// ###############################
+// PreisBanner
+// ###############################
+.preise
+    padding-top: 5vh
+    .AboH1
+        margin-bottom: 2rem
+
+.preisInfo
+    width: 30%
+    background: $bg
+    border-radius: $radius_2
+    padding: 2rem
+    box-shadow: 0 0rem 2rem rgba($neon,1)
+    h3
+        font-size: 2rem
+        color: $neon
+    .preisPunkt
+        width: 100%
+        display: flex
+        justify-content: space-between
+        border-bottom: 1px solid $neon
+        align-items: center
+        gap: 1rem
+        padding: 0.5rem 0
+        color: $white
+        .check
+            width: 1.5rem
+            height: 1.5rem
+            background: $bg
+            border: 0.3rem solid $neon
+            border-radius: 50%
+            margin: 0.5rem 0
+        .yes
+            &::after
+                content: '✔'
+                font-size: 1.5rem
+                color: $neon
+                position: relative
+                top: -0.5rem
+                left: 0.2rem
+
+.preisListe
+    width: 30%
+    .priceBox
+        background: $white
+        padding: 2rem 1.5rem
+        border-radius: $radius_2
+        color: $bg
+        // border: 0.2rem solid $purple
+        h4
+            font-size: 1.3rem
+            font-weight: bold
+            color: $bg
+            margin: 0
+            padding: 0
+
+        p
+            margin: 0
+            padding: 0
+        .priceBoxR
+            .priceNumber
+                font-size: 1.5rem
+                font-weight: bold
+                color: $bg
+                margin: 0
+                padding: 0
+                p
+                    font-size: 1rem
+                    font-weight: 500
+                    color: $bg
+                    margin: 0
+                    padding: 0 0 0 0.5rem
+        &:hover
+            cursor: pointer
+
+    .activePlan
+        background: $neon
+        color: $bg
+        transition: background 0.2s ease, color 0.2s ease
+
 .equalButtons
     flex: 1
     min-width: 180px

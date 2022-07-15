@@ -10,21 +10,20 @@
                 <Button1 v-if="!settings.loggedIn" @buttonClicked="anmelden = true" :action="true">Anmelden</Button1>
 
                 <Button1 CustomStyle="ButtonStyle3" v-if="!settings.loggedIn">Registrieren</Button1>
-                <UploadButton v-if="settings.loggedIn" customClass="" />
-
+                <UploadButton v-if="settings.loggedIn" customClass="" @click="closeMenu" />
 
                 <Bell @click="bellToggle" :bellOpen="settings.bellOpen" />
                 <div class="profile" v-if="settings.loggedIn">
                     <img src="@/assets/img/profile/profile.jpg" alt="Profile Image" class="icon" @click="profileToggle">
                 </div>
                 <Vue3Lottie ref="menuControl" :animationData="MenuJSON" class="MenuBurger" :autoPlay="false"
-                    :pauseAnimation="false" direction="forward" :loop="false" @click="playmenu()" />
+                    :pauseAnimation="false" direction="reverse" :loop="false" @click="playmenu()" />
             </div>
         </div>
 
     </div>
 
-    <DMenu :mobile="mobile" :menuOpen="menuOpen" @playmenu="playmenu">
+    <DMenu @playmenu="playmenu">
     </DMenu>
 
     <Profile :profileOpen="settings.profileOpen" />
@@ -47,7 +46,8 @@ import Anmelden from './SubOpen/Anmelden.vue'
 import Profile from './SubOpen/Profile.vue'
 import UploadArea from './SubOpen/UploadArea.vue'
 import {
-    Button1, UploadButton
+    Button1,
+    UploadButton
 } from '@/components/Elements/'
 
 export default {
@@ -85,35 +85,43 @@ export default {
         },
 
     },
+    setup() {
+       
+    },
     methods: {
-        playmenu() {
-            if (this.direction === "forward") {
+        closeMenu() {
+            if (this.settings.menuOpen === true) {
                 this.$refs['menuControl'].setDirection("reverse")
                 this.$refs['menuControl'].play()
-                this.direction = "reverse"
-                this.menuOpen = false
-                this.bellOpen = false
+                this.settings.menuOpen = false
+            }
+        },
+        playmenu() {
+            this.settings.bellOpen = false
+            this.settings.profileOpen = false
+            this.settings.uploadOpen = false
+
+            if (this.settings.menuOpen === false) {
+                    this.$refs['menuControl'].setDirection("forward")
+                    this.$refs['menuControl'].play()
+                    this.settings.menuOpen = true
             } else {
-                this.$refs['menuControl'].setDirection("forward")
+                this.settings.menuOpen = false
+                this.$refs['menuControl'].setDirection("reverse")
                 this.$refs['menuControl'].play()
-                this.direction = "forward"
-                this.menuOpen = true
-                this.bellOpen = false
             }
         },
         bellToggle() {
             this.settings.bellOpen = !this.settings.bellOpen
             this.settings.profileOpen = false
-            if (this.menuOpen === true && this.direction === "forward") {
-                this.$refs['menuControl'].setDirection("reverse")
-                this.$refs['menuControl'].play()
-                this.direction = "reverse"
-                this.menuOpen = false
-            }
+            this.settings.uploadOpen = false
+            this.closeMenu()
         },
         profileToggle() {
             this.settings.profileOpen = !this.settings.profileOpen
             this.settings.bellOpen = false
+            this.settings.uploadOpen = false
+            this.closeMenu()
         }
     },
 }

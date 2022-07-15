@@ -96,18 +96,19 @@
             text-decoration: none
         // align-items: center
         .h1Banner
-            font-size: clamp(4rem, 15vw, 5rem)
-            font-family: $riftFont !important
+            font-size: clamp(4rem, 15vw, 5rem) !important
+            font-family: $riftFont
             font-weight: 700
             color: $white
+
             line-height: 1
             margin: 0 0 0 0
             padding: 0
             @include media('<=tablet')
-                // font-size: 3.5rem
-                text-align: center
+                text-align: center !important
         .h2Banner
-            font-size: clamp(3.5rem, 20vw, 4rem)
+            font-size: clamp(3.5rem, 20vw, 4rem) !important
+            text-align: left !important
 
         article
             font-size: clamp(0.8rem, 20vw, 1rem)
@@ -118,6 +119,8 @@
             @include media('<phone')
                 font-size: 1rem
                 text-align: center
+        .mainArticle
+            text-align: center !important
 
 .SingleBanner
     width: calc($contentWidth + $banner_gap)

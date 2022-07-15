@@ -1,0 +1,106 @@
+[{
+        "title": "Lehrer & Schüler",
+        "description": "Für den Musikunterricht",
+        "price": "22,99€",
+        "inhalt": [{
+            "verleih": [{
+                "allow": true,
+                "text": "bis zu 2 Instrumente"
+            }],
+            "zeit": true,
+            "aufnahme": false,
+            "raum": [{
+                "allow": true,
+                "gedämmt": true,
+                "studio": false,
+                "anzahl": 2
+            }],
+            "workshop": true,
+            "rabatt": false,
+            "community": true,
+            "cloud": false,
+            "software": false,
+            "mixer": false,
+            "pc": false
+        }]
+    },
+    {
+        "title": "Jammer",
+        "description": "Perfekt für Einzelmusiker",
+        "price": "24,99€",
+        "inhalt": [{
+            "verleih": [{
+                "allow": true,
+                "text": "bis zu 1 Instrument"
+            }],
+            "zeit": true,
+            "aufnahme": true,
+            "raum": [{
+                "allow": true,
+                "gedämmt": true,
+                "studio": false,
+                "anzahl": 1
+            }],
+            "workshop": true,
+            "rabatt": true,
+            "community": true,
+            "cloud": false,
+            "software": false,
+            "mixer": false,
+            "pc": false
+        }]
+    },
+
+    {
+        "title": "Bands",
+        "description": "Für regelmäßige Gigs mit der Band",
+        "price": "69,99€",
+        "inhalt": [{
+            "verleih": [{
+                "allow": true,
+                "text": "bis zu 4 Instrumente + Mikrofon"
+            }],
+            "zeit": true,
+            "aufnahme": true,
+            "raum": [{
+                "allow": true,
+                "gedämmt": true,
+                "studio": false,
+                "anzahl": 5
+            }],
+            "workshop": true,
+            "rabatt": true,
+            "community": true,
+            "cloud": false,
+            "software": false,
+            "mixer": false,
+            "pc": false
+        }]
+    },
+    {
+        "title": "Producer",
+        "description": "Ein Studio für deine Musikproduktion",
+        "price": "199,99€",
+        "inhalt": [{
+            "verleih": [{
+                "allow": true,
+                "text": "bis zu 7 Instrumente"
+            }],
+            "zeit": true,
+            "aufnahme": true,
+            "raum": [{
+                "allow": true,
+                "gedämmt": true,
+                "studio": true,
+                "anzahl": 10
+            }],
+            "workshop": true,
+            "rabatt": true,
+            "community": true,
+            "cloud": true,
+            "software": true,
+            "mixer": true,
+            "pc": true
+        }]
+    }
+]
