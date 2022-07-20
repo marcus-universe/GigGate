@@ -15,3 +15,153 @@
 
 .bottomCollum
     min-width: 100px
+
+$checkboxSize: 20px
+
+.checkbox_Container
+    position: relative
+    width: $checkboxSize
+    height: $checkboxSize
+    min-width: $checkboxSize
+    min-height: $checkboxSize
+    left: 0
+    top: 0
+    .customCheckbox[type=checkbox]
+        -webkit-appearance: none
+        margin: 0
+        padding: 0
+        width: $checkboxSize
+        height: $checkboxSize
+        min-width: $checkboxSize
+        min-height: $checkboxSize
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translateX(-50%) translateY(-50%)
+        z-index: 5
+        &:hover, &:focus, &:active
+            cursor: pointer
+        &:checked + .checkboxDesign
+            // background: $neon
+            border-radius: 10px
+            transition: background 0.2s ease, color 0.2s ease
+            div
+                position: absolute
+                width: 50%
+                height: 50%
+                border-radius: 50%
+                left: 50%
+                top: 50%
+                transform: translateX(-50%) translateY(-50%)
+                background: $neon
+
+    .checkboxDesign
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translateX(-50%) translateY(-50%)
+        width: $checkboxSize
+        height: $checkboxSize
+        min-width: $checkboxSize
+        min-height: $checkboxSize
+        border: 0.2rem solid $neon
+        background: $bg
+        border-radius: 30%
+        transition: background 0.2s ease, color 0.2s ease
+        z-index: 2
+
+//######################################################################################################################
+//Filter Bar
+//######################################################################################################################
+$IconSize: 40px
+$paddingFilter: 0.4rem
+
+.filterSelector
+    position: relative
+    width: 80%
+    border-bottom: 1px solid $purple
+    padding: 0 0 $paddingFilter 0
+    .InstFilter
+        background: $purple
+        font-size: 1rem
+        padding: $paddingFilter
+        font-weight: 500
+        border-radius: $radius_2
+        &:hover
+            cursor: pointer
+    .instrumentSelect
+        background: $white
+        flex-wrap: wrap
+        width: 50%
+        left: 0rem
+        top: calc($paddingFilter * 2 + $IconSize)
+        position: absolute
+        border-radius: $radius_2
+        padding: $paddingFilter
+        gap: $paddingFilter
+        .selection
+            background: $white
+            padding: $paddingFilter
+            border-radius: $radius_2
+            transition: background 0.1s ease,
+            &:hover
+                background: rgba($purple, 0.4)
+                color: $bg
+                cursor: pointer
+            .filterInstIcon
+                width: $IconSize
+                height: $IconSize
+                min-width: $IconSize
+                min-height: $IconSize
+                path, circle
+                    fill: $bg
+        .active
+            background: $neon !important
+    .active
+        background: $neon
+
+            // transform: translate(-50%, -50%)
+
+//######################################################################################################################
+//Room Cards
+//######################################################################################################################
+$IconSizeSmall: 30px
+
+.raumCard
+    max-width: 300px
+    background: $white
+    border-radius: $radius_2
+    padding: calc($paddingFilter + 1rem) 0
+    .cardContainer
+        width: 80%
+        h4
+            font-size: 1.2rem
+            font-weight: 500
+            margin: 0 0 0.5rem 0
+        .info, .icons
+            .instIcon, .infoIcon
+                path, circle
+                    fill: $bg
+            .infoIcon
+                width: $IconSizeSmall
+                height: $IconSizeSmall
+                min-width: $IconSizeSmall
+                min-height: $IconSizeSmall
+            .instIcon
+                width: $IconSize
+                height: $IconSize
+                min-width: $IconSize
+                min-height: $IconSize
+
+        .info
+            margin-bottom: 1rem
+            .person
+                padding: 0 $paddingFilter
+            .breakline
+                width: 0.1rem
+                background: $bg
+
+    .imageSlide
+        min-height: 200px
+        background: $bg
+        border-radius: $radius_2

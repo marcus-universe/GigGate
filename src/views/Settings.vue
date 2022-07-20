@@ -69,7 +69,7 @@ export default {
                 this.mainWindow.setFullscreen(true)
             } else {
                 this.mainWindow.setFullscreen(false)
-                this.mainWindow.setSize(new LogicalSize(1920, 1080))
+                this.mainWindow.setSize(new LogicalSize(1280, 720))
                 // this.mainWindow.setPosition(new LogicalPosition(0, 0))
             }
         },
@@ -89,7 +89,7 @@ export default {
                 this.mainWindow.setSize(new LogicalSize(380, 750))
                 // this.mainWindow.setPosition(new LogicalPosition(0, 0))
             } else {
-                this.mainWindow.setSize(new LogicalSize(1920, 1080))
+                this.mainWindow.setSize(new LogicalSize(1280, 720))
                 // this.mainWindow.setPosition(new LogicalPosition(0, 0))
             }
         },

@@ -109,6 +109,8 @@
         .h2Banner
             font-size: clamp(3.5rem, 20vw, 4rem) !important
             text-align: left !important
+            @include media('<=tablet')
+                text-align: center !important
 
         article
             font-size: clamp(0.8rem, 20vw, 1rem)
@@ -126,7 +128,13 @@
     width: calc($contentWidth + $banner_gap)
     // min-height: 400px
     justify-content: flex-start
-    gap: 15vw
+    // gap: clamp(100px, 8vw, 600px)
+    .BannerTXTBox
+        width: 100%
+        @include media('<=tablet')
+            width: clamp(400px, 50vw, 500px)
+        @include media('<phone')
+            width: clamp(400px, 50vw, 500px)
     @include media('<=tablet')
         justify-content: center !important
         gap: 2rem
@@ -138,3 +146,24 @@
         justify-content: center !important
         gap: 2rem
     // margin: 0 10% !important
+
+.ImageBanner
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    min-height: 300px
+    @include media('<=phone')
+        min-height: 250px
+    .bannerBlur
+        min-height: 300px
+        @include media('<=phone')
+            min-height: 250px
+        h1
+            font-size: clamp(0.8rem, 5vw, 4rem)
+            color: $neon
+            padding: 2rem
+            background: rgba($bg,0.8)
+            border-radius: $radius_1
+            box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.5)
+            border: 0.5rem solid $neon
+            backdrop-filter: blur(10vw)

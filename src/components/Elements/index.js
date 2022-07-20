@@ -5,6 +5,11 @@ import UploadButton from "./UploadButton.vue"
 import SwipePoints from "./swipePoints.vue"
 import Exit from "./Exit.vue"
 import PriceBanner from "./PriceBanner.vue"
+import Checkbox from "./Checkbox.vue"
+import FilterInst from "./Filter/FilterInst.vue"
+import FilterIcon from "./Filter/FilterIcons.vue"
+import RaumCard from "./Cards/RaumCard.vue" 
+import ImageSlider from "./Cards/ImageSlider.vue"
 
 export {
     CallToActionButton,
@@ -13,6 +18,11 @@ export {
     UploadButton,
     SwipePoints,
     Exit,
-    PriceBanner
+    PriceBanner,
+    Checkbox,
+    FilterInst,
+    FilterIcon,
+    RaumCard,
+    ImageSlider
 
 }

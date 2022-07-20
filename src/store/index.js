@@ -1,7 +1,7 @@
 import {
   createStore
 } from 'vuex'
-import {commentsData, Prices, Notifications} from '@/assets/json'
+import {commentsData, Prices, Notifications, filterIcons, rooms} from '@/assets/json'
 
 export default createStore({
   state: {
@@ -15,14 +15,17 @@ export default createStore({
       bellOpen: false,
       NotifyNumber: 4,
       deletedNotify: false,
-      uploadOpen: false
+      uploadOpen: false,
+      filterInstOpen: false,
     },
     elements: {
       ButtonCenter: false,
     },
     notifications: Notifications,
     comments: commentsData,
-    preisListe: Prices
+    preisListe: Prices,
+    filterInst: filterIcons,
+    rooms: rooms
   },
   getters: {},
   mutations: {

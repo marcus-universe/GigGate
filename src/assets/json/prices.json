@@ -1,7 +1,7 @@
 [{
         "title": "Lehrer & Schüler",
         "description": "Für den Musikunterricht",
-        "price": "22,99€",
+        "price": 22.99,
         "inhalt": [{
             "verleih": [{
                 "allow": true,
@@ -27,7 +27,7 @@
     {
         "title": "Jammer",
         "description": "Perfekt für Einzelmusiker",
-        "price": "24,99€",
+        "price": 24.99,
         "inhalt": [{
             "verleih": [{
                 "allow": true,
@@ -54,7 +54,7 @@
     {
         "title": "Bands",
         "description": "Für regelmäßige Gigs mit der Band",
-        "price": "69,99€",
+        "price": 69.99,
         "inhalt": [{
             "verleih": [{
                 "allow": true,
@@ -80,7 +80,7 @@
     {
         "title": "Producer",
         "description": "Ein Studio für deine Musikproduktion",
-        "price": "199,99€",
+        "price": 199.99,
         "inhalt": [{
             "verleih": [{
                 "allow": true,

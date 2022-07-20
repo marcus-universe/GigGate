@@ -21,7 +21,7 @@
             </div>
             <div class="SubmitZeile">
                 <div class="formZeile" style="min-width: auto">
-                    <input type="checkbox">
+                    <input type="checkbox" class="customCheckbox">
                     <label>
                         Angemeldet bleiben
                     </label>

@@ -1,0 +1,33 @@
+[{
+    "currentIndex": 0,
+    "name": "Drummers Rooms",
+    "description": {
+        "text": "Ein Raum um richtig auf die Drums zu hauen",
+        "personen": 1,
+        "ort": "Hamburg (11km)",
+        "url": "navigation",
+        "icons": [{
+                "icon": "drums"
+            },
+            {
+                "icon": "mic"
+            },
+            {
+                "icon": "rec"
+            }
+        ]
+    },
+    "card": [{
+            "url": "@/assets/img/raum/room1",
+            "image": 1
+        },
+        {
+            "url": "@/assets/img/raum/room1",
+            "image": 2
+        },
+        {
+            "url": "@/assets/img/raum/room1",
+            "image": 3
+        }
+    ]
+}]

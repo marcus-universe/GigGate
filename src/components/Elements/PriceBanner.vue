@@ -5,7 +5,7 @@
             <p>{{ description }}</p>
         </div>
         <div class="priceBoxR flex_center_h">
-            <div class="priceNumber flex_center_h flex_start align_center">{{ price }} <p>/{{ art }}</p>
+            <div class="priceNumber flex_center_h flex_start align_center">{{ price }}€ <p>/{{ art }}</p>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@ export default {
             default: '',
         },
         price: {
-            type: String,
+            type: Number,
             required: true
         },
         art: {

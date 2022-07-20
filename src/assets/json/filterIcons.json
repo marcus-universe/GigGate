@@ -1,0 +1,51 @@
+[{
+        "name": "Gitarre",
+        "icon": "guitar",
+        "active": false
+    },
+    {
+        "name": "Bass",
+        "icon": "bass",
+        "active": false
+    },
+    {
+        "name": "Piano",
+        "icon": "piano",
+        "active": false
+    },
+    {
+        "name": "Synthesizer",
+        "icon": "synth",
+        "active": false
+    },
+    {
+        "name": "Schlagzeug",
+        "icon": "drums",
+        "active": false
+    },
+    {
+        "name": "Geige",
+        "icon": "geige",
+        "active": false
+    },
+    {
+        "name": "Mikrofon",
+        "icon": "mic",
+        "active": false
+    },
+    {
+        "name": "Mixer",
+        "icon": "mix",
+        "active": false
+    },
+    {
+        "name": "Computer",
+        "icon": "pc",
+        "active": false
+    },
+    {
+        "name": "Recorder",
+        "icon": "rec",
+        "active": false
+    }
+]

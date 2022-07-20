@@ -4,19 +4,22 @@
         <p>
             Wähle dein Abomodell aus und fang direkt an zu jammen.
         </p>
-        <CallToActionButton ButtonStyle="ButtonStyle1" :ButtonCenter="true" link="preis">
-            Jetzt Abo auswählen!
-        </CallToActionButton>
+
+        <div class="flex_center_h">
+            <Button1 CustomStyle="ButtonStyle1 text1rem" link="preis">
+                Jetzt Abo auswählen!
+            </Button1>
+        </div>
 
 
     </div>
 </template>
 
 <script>
-import CallToActionButton from '@/components/Elements/CallToActionButton.vue'
+import { Button1 } from '@/components/Elements'
 export default {
     components: {
-        CallToActionButton,
+        Button1,
     },
     computed: {
         element() {
