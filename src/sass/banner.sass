@@ -153,13 +153,15 @@
     background-repeat: no-repeat
     min-height: 300px
     @include media('<=phone')
-        min-height: 250px
+        min-height: 200px
+        &.margin_bottom_2
+            margin-bottom: 1rem
     .bannerBlur
         min-height: 300px
         @include media('<=phone')
-            min-height: 250px
+            min-height: 200px
         h1
-            font-size: clamp(0.8rem, 5vw, 4rem)
+            font-size: clamp(2rem, 5vw, 4rem)
             color: $neon
             padding: 2rem
             background: rgba($bg,0.8)
@@ -167,3 +169,8 @@
             box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.5)
             border: 0.5rem solid $neon
             backdrop-filter: blur(10vw)
+            @include media('<=phone')
+                padding: 1rem
+                border: 0.2rem solid $neon
+                border-radius: $radius_2
+                backdrop-filter: blur(5vw)

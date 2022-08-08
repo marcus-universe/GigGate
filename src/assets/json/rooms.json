@@ -1,33 +1,279 @@
 [{
-    "currentIndex": 0,
-    "name": "Drummers Rooms",
-    "description": {
-        "text": "Ein Raum um richtig auf die Drums zu hauen",
-        "personen": 1,
-        "ort": "Hamburg (11km)",
-        "url": "navigation",
-        "icons": [{
-                "icon": "drums"
+        "currentIndex": 0,
+        "name": "Drummers Room",
+        "description": {
+            "text": "Ein Raum um richtig auf die Drums zu hauen.",
+            "personen": 1,
+            "ort": "Hamburg (800m)",
+            "url": "navigation",
+            "icons": [{
+                    "icon": "drums"
+                },
+                {
+                    "icon": "mic"
+                },
+                {
+                    "icon": "rec"
+                }
+            ]
+        },
+        "images": [{
+                "url": "/raum/room1/1"
             },
             {
-                "icon": "mic"
+                "url": "/raum/room1/2"
             },
             {
-                "icon": "rec"
+                "url": "/raum/room1/3"
             }
         ]
     },
-    "card": [{
-            "url": "@/assets/img/raum/room1",
-            "image": 1
+    {
+        "currentIndex": 0,
+        "name": "Loneley Jammer",
+        "description": {
+            "text": "Sei allein mit deinem Instrument und jamme.",
+            "personen": 1,
+            "ort": "Hamburg (2km)",
+            "url": "navigation",
+            "icons": [{
+                    "icon": "guitar"
+                },
+                {
+                    "icon": "bass"
+                },
+                {
+                    "icon": "piano"
+                },
+                {
+                    "icon": "synth"
+                },
+                {
+                    "icon": "geige"
+                },
+                {
+                    "icon": "mic"
+                },
+                {
+                    "icon": "rec"
+                }
+            ]
         },
-        {
-            "url": "@/assets/img/raum/room1",
-            "image": 2
+        "images": [{
+                "url": "/raum/room1/1"
+            },
+            {
+                "url": "/raum/room1/2"
+            },
+            {
+                "url": "/raum/room1/3"
+            }
+        ]
+
+    },
+    {
+        "currentIndex": 0,
+        "name": "The Gig Room",
+        "description": {
+            "text": "Der Raum für dein Gig mit der Band.",
+            "personen": 5,
+            "ort": "Hamburg (2.3km)",
+            "url": "navigation",
+            "icons": [{
+                    "icon": "guitar"
+                },
+                {
+                    "icon": "bass"
+                },
+                {
+                    "icon": "piano"
+                },
+                {
+                    "icon": "synth"
+                },
+                {
+                    "icon": "geige"
+                },
+                {
+                    "icon": "mic"
+                },
+                {
+                    "icon": "rec"
+                },
+                {
+                    "icon": "drums"
+                }
+            ]
         },
-        {
-            "url": "@/assets/img/raum/room1",
-            "image": 3
-        }
-    ]
-}]
+        "images": [{
+                "url": "/raum/room1/1"
+            },
+            {
+                "url": "/raum/room1/2"
+            },
+            {
+                "url": "/raum/room1/3"
+            }
+        ]
+
+    },
+    {
+        "currentIndex": 0,
+        "name": "Lets Teach",
+        "description": {
+            "text": "Ein Ort um ein Instrument zu lernen. Für Lehrer und Schüler.",
+            "personen": 2,
+            "ort": "Hamburg (2.6km)",
+            "url": "navigation",
+            "icons": [{
+                    "icon": "guitar"
+                },
+                {
+                    "icon": "bass"
+                },
+                {
+                    "icon": "piano"
+                },
+                {
+                    "icon": "synth"
+                },
+                {
+                    "icon": "geige"
+                }
+            ]
+        },
+        "images": [{
+                "url": "/raum/room1/1"
+            },
+            {
+                "url": "/raum/room1/2"
+            },
+            {
+                "url": "/raum/room1/3"
+            }
+        ]
+
+    },
+    {
+        "currentIndex": 0,
+        "name": "Werde zum Drummer",
+        "description": {
+            "text": "Hier wirst du zum Drummer. Für Lehrer und Schüler.",
+            "personen": 2,
+            "ort": "Hamburg (3km)",
+            "url": "navigation",
+            "icons": [{
+                "icon": "drums"
+            }]
+        },
+        "images": [{
+                "url": "/raum/room1/1"
+            },
+            {
+                "url": "/raum/room1/2"
+            },
+            {
+                "url": "/raum/room1/3"
+            }
+        ]
+
+    },
+    {
+        "currentIndex": 0,
+        "name": "The Gig Room",
+        "description": {
+            "text": "Der Raum für dein Gig mit der Band.",
+            "personen": 5,
+            "ort": "Hamburg (3km)",
+            "url": "navigation",
+            "icons": [{
+                    "icon": "guitar"
+                },
+                {
+                    "icon": "bass"
+                },
+                {
+                    "icon": "piano"
+                },
+                {
+                    "icon": "synth"
+                },
+                {
+                    "icon": "geige"
+                },
+                {
+                    "icon": "mic"
+                },
+                {
+                    "icon": "rec"
+                },
+                {
+                    "icon": "drums"
+                }
+            ]
+        },
+        "images": [{
+                "url": "/raum/room1/1"
+            },
+            {
+                "url": "/raum/room1/2"
+            },
+            {
+                "url": "/raum/room1/3"
+            }
+        ]
+
+    },
+    {
+        "currentIndex": 0,
+        "name": "Producer Studio",
+        "description": {
+            "text": "Der Raum für dein Gig mit der Band.",
+            "personen": 8,
+            "ort": "Hamburg (3km)",
+            "url": "navigation",
+            "icons": [{
+                    "icon": "guitar"
+                },
+                {
+                    "icon": "bass"
+                },
+                {
+                    "icon": "piano"
+                },
+                {
+                    "icon": "synth"
+                },
+                {
+                    "icon": "geige"
+                },
+                {
+                    "icon": "mic"
+                },
+                {
+                    "icon": "rec"
+                },
+                {
+                    "icon": "drums"
+                },
+                {
+                    "icon": "pc"
+                },
+                {
+                    "icon": "mixer"
+                }
+            ]
+        },
+        "images": [{
+                "url": "/raum/room1/1"
+            },
+            {
+                "url": "/raum/room1/2"
+            },
+            {
+                "url": "/raum/room1/3"
+            }
+        ]
+
+    }
+]

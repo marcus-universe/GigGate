@@ -8,7 +8,7 @@
                 <DMenuPunkt :link="'/events'" :name="'Events'" :icon="'events'" @click="$emit('playmenu')" />
                 <DMenuPunkt :link="'/community'" :name="'Community'" :icon="'community'" @click="$emit('playmenu')" />
                 <DMenuPunkt :link="'/preis'" :name="'Preise'" :icon="'preise'" @click="$emit('playmenu')" />
-                <DMenuPunkt :link="'/contact'" :name="'Kontakt'" :icon="'kontakt'" @click="$emit('playmenu')" />
+                <!-- <DMenuPunkt :link="'/contact'" :name="'Kontakt'" :icon="'kontakt'" @click="$emit('playmenu')" /> -->
             </div>
         </nav>
     </transition>

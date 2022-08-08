@@ -1,10 +1,16 @@
 <template>
 
-    <router-link :to="link">
-        <div class="Icons" :class="[customStyle]">
+    <router-link :to="link" v-if="!action">
+        <div class="Icons flex_center_h align_center" :class="[customStyle]">
             <slot></slot>
         </div>
     </router-link>
+
+    <a v-if="action" @click="$emit('clickedIcon')">
+        <div class="Icons flex_center_h align_center" :class="[customStyle]">
+            <slot></slot>
+        </div>
+    </a>
 
 
 
@@ -21,6 +27,10 @@ export default {
         customStyle: {
             type: String,
             default: '',
+        },
+        action: {
+            type: Boolean,
+            default: false,
         },
     },
 

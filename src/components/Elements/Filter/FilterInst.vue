@@ -1,44 +1,55 @@
 <template>
   <div class="flex_center_h flex_start filterSelector">
-    <div class="InstFilter" @click="filterInstClick" :class="{ active: settings.filterInstOpen}">Instrumente</div>
+    <div class="InstFilter flex_center_h flex_start align_center gap1" @click="filterInstClick"
+      :class="{ active: settings.filterInstOpen}">
+      Instrumente
+      <FilterIcon :customClass="{arrow: true,  active: settings.filterInstOpen}" :icon="'slider'" />
+    </div>
 
-    <transition name="fade">
-      <div class="flex_center_h instrumentSelect" v-if="settings.filterInstOpen">
-        <div class="selection flex_center_h align_center flex_start"
-          v-for="(Instrument, index) in $store.state.filterInst" :key="Instrument" @click="selectInst(index)"
-          :class="{active: filterInst[index].active}">
-          <FilterIcon customClass="filterInstIcon" :icon="$store.state.filterInst[index].icon" /> <span>{{
-            $store.state.filterInst[index].name}}</span>
+    <transition name=" fade">
+      <div class="flex_center_h instrumentSelect flex_start" v-if="settings.filterInstOpen">
+
+        <Exit v-if="settings.mobile" @click="settings.filterInstOpen = false" />
+
+        <div class="flex_center_h align_center flex_start selection" v-for="(Instrument, index) in filterInst"
+          :key="Instrument" @click="selectInst(index)" :class="{active: filterInst[index].active}">
+          <FilterIcon customClass="filterInstIcon" :icon="filterInst[index].icon" />
+          <span>{{
+          filterInst[index].name}}</span>
         </div>
       </div>
     </transition>
-
   </div>
 </template>
 
 <script>
-import FilterIcon from '@/components/Elements/Filter/FilterIcons.vue'
+import {
+    Exit,
+} from '@/components/Elements/'
+import FilterIcon from './FilterIcons.vue'
 export default {
     components: {
-        FilterIcon
+        FilterIcon,
+        Exit
     },
     computed: {
         settings() {
             return this.$store.state.settings
-      },
-      filterInst() {
-          return this.$store.state.filterInst
-      }
+        },
+        filterInst() {
+            return this.$store.state.filterInst
+        }
 
-  },
-  methods: {
-    filterInstClick() {
-      this.settings.filterInstOpen = !this.settings.filterInstOpen
     },
-    selectInst(index) {
-      this.filterInst[index].active = !this.filterInst[index].active
+    methods: {
+        filterInstClick() {
+            this.settings.filterInstOpen = !this.settings.filterInstOpen
+            this.settings.menuNoShadow = !this.settings.menuNoShadow
+        },
+        selectInst(index) {
+            this.filterInst[index].active = !this.filterInst[index].active
+        }
     }
-  }
 
 }
 </script>
