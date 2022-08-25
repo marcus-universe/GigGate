@@ -5,6 +5,7 @@ import filterIcons from "./filterIcons.json"
 import rooms from "./rooms.json"
 import orte from "./orte.json"
 import message from "./message.json"
+import abomodelle from "./abomodelle.json"
 
 export {
     commentsData,
@@ -13,5 +14,6 @@ export {
     filterIcons,
     rooms,
     orte,
-    message
+    message,
+    abomodelle
 }

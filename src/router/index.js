@@ -14,6 +14,12 @@ const routes = [{
     name: 'Proberäume',
     component: () => import('../views/ProbeRaeume.vue')
   },
+
+  {
+    path: '/room',
+    name: 'Room',
+    component: () => import('../views/Room.vue')
+  },
   {
     path: '/events',
     name: 'Events',

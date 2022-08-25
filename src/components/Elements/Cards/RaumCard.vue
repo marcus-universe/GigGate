@@ -27,7 +27,7 @@
                         :icon="rooms[index].description.icons[iconIndex].icon" :customClass="'instIcon'" />
 
                 </div>
-                <FilterIcon :customClass="'navIcon'" :icon="'nav'" />
+                <FilterIcon :customClass="'navIcon'" :icon="'nav'" @click="RoomPage"/>
             </div>
         </div>
     </div>
@@ -52,6 +52,15 @@ export default {
 
     },
     methods: {
+        RoomPage() {
+            this.$router.push({
+                name: 'RaumPage',
+                params: {
+                    room: this.rooms[this.$refs.icons.currentIndex].name
+                }
+            })
+        },
+
         ScrollIcons(event) {
             event.preventDefault()
 

@@ -8,6 +8,7 @@ import PriceBanner from "./PriceBanner.vue"
 import Checkbox from "./Checkbox.vue"
 import FilterInst from "./Filter/FilterInst.vue"
 import FilterIcon from "./Filter/FilterIcons.vue"
+import FilterAbo from "./Filter/FilterAbo.vue"
 import FilterOrte from "@/components/Elements/Filter/FilterOrte.vue"
 import RaumCard from "./Cards/RaumCard.vue" 
 import ImageSlider from "./Cards/ImageSlider.vue"
@@ -31,6 +32,7 @@ export {
     ImageSlider,
     ChatIcon,
     ChatMessage,
-    ChatContainer
+    ChatContainer,
+    FilterAbo
 
 }

@@ -47,5 +47,15 @@
         "name": "Recorder",
         "icon": "rec",
         "active": false
+    },
+    {
+        "name": "Midi-Controller",
+        "icon": "midi",
+        "active": false
+    },
+    {
+        "name": "Trompete",
+        "icon": "trompete",
+        "active": false
     }
 ]

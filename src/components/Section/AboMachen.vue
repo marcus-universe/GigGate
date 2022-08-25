@@ -1,5 +1,7 @@
 <template>
     <div class="AboMachen flex_center_v">
+
+        <div class="contentAbo flex_start">
         <h2>Jetzt Proberaum buchen</h2>
         <p>
             Wähle dein Abomodell aus und fang direkt an zu jammen.
@@ -10,7 +12,7 @@
                 Jetzt Abo auswählen!
             </Button1>
         </div>
-
+</div>
 
     </div>
 </template>

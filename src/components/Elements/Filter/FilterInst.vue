@@ -6,7 +6,7 @@
       <FilterIcon :customClass="{arrow: true,  active: settings.filterInstOpen}" :icon="'slider'" />
     </div>
 
-    <transition name=" fade">
+    <transition name="fade">
       <div class="flex_center_h instrumentSelect flex_start" v-if="settings.filterInstOpen">
 
         <Exit v-if="settings.mobile" @click="settings.filterInstOpen = false" />

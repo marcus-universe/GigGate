@@ -59,6 +59,7 @@
             </div>
         </div>
         <CommentSlider />
+        <Sponsoren />
 <AboMachen />
 
     </section>
@@ -68,6 +69,7 @@
 import Banner from '../components/Banner/BigBanner.vue'
 import CommentSlider from '@/components/Section/CommentSlider.vue'
 import AboMachen from '@/components/Section/AboMachen.vue'
+import Sponsoren from '@/components/Section/Sponsoren.vue'
 import {
     CallToActionButton,
     LinesStroke
@@ -85,7 +87,8 @@ export default {
         H1Banner,
         TextArticle1,
         CommentSlider,
-        AboMachen
+        AboMachen,
+        Sponsoren
     },
     computed: {
         element() {

@@ -203,7 +203,11 @@ $paddingFilter: 0.5rem
                 color: $bg !important
                 .filterInstIcon
                     path, circle, ellipse
+
                         fill: $bg
+        .selectAbo
+            width: auto
+            min-width: 400px
         .active
             background: $neon
             color: $bg
@@ -354,6 +358,40 @@ $paddingFilter: 0.5rem
                     cursor: pointer
                     filter: drop-shadow(0 0rem 1rem rgba($bg,0.5))
                     fill: $white
+
+.slideSection
+    padding: 2rem
+    align-items: flex-end
+    font-size: 1.2rem
+    font-weight: 600
+    .NumberSection
+        font-size: 1.2rem
+        color: $purple
+        padding: 0.4rem 1rem
+        background: $bg
+        border-radius: $radius_2
+        font-weight: 600
+        &:hover
+            cursor: pointer
+    .active
+        background: $neon
+        color: $bg
+    .slideSectionIcon
+        width: $IconSize
+        height: $IconSize
+        min-width: $IconSize
+        min-height: $IconSize
+        path, circle, ellipse
+            fill: $bg
+        @include media('<phone')
+            width: 30px
+            height: 30px
+            min-width: 30px
+            min-height: 30px
+            path, circle, ellipse
+                fill: $bg
+    .reverse
+        transform: rotate(180deg)
 
 $heightImage: 250px
 .imageSlide

@@ -149,7 +149,7 @@
 
 .ImageBanner
     background-size: cover
-    background-position: center
+    background-position: center 60%
     background-repeat: no-repeat
     min-height: 300px
     @include media('<=phone')
@@ -162,12 +162,12 @@
             min-height: 200px
         h1
             font-size: clamp(2rem, 5vw, 4rem)
-            color: $neon
+            color: $white
             padding: 2rem
             background: rgba($bg,0.8)
             border-radius: $radius_1
             box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.5)
-            border: 0.5rem solid $neon
+            border: 0.5rem solid $purple
             backdrop-filter: blur(10vw)
             @include media('<=phone')
                 padding: 1rem
