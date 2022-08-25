@@ -1,18 +1,19 @@
 <template>
     <div class="desktopNavBar" :class="{noShadow: bellOpen}">
         <div class="navContent">
-            <router-link to="/" class="LogoLink"><img src="../../assets/giggate_logo_round.svg" alt="Logo GigGate"
+            <router-link to="/" class="LogoLink"><img src="../../assets/logo_icon_navbar.svg" alt="Logo GigGate"
                     class="logo">
             </router-link>
 
             <div class="rightNav">
 
                 <Button1 v-if="!settings.loggedIn" @buttonClicked="anmelden = true" :action="true">Anmelden</Button1>
-
                 <Button1 CustomStyle="ButtonStyle3" v-if="!settings.loggedIn">Registrieren</Button1>
                 <UploadButton v-if="settings.loggedIn" customClass="" @click="closeMenu" />
-
                 <Bell @click="bellToggle" :bellOpen="settings.bellOpen" />
+
+                <ChatIcon @chatToggle="chatToggle" v-if="settings.loggedIn" />
+
                 <div class="profile" v-if="settings.loggedIn">
                     <img src="@/assets/img/profile/profile.jpg" alt="Profile Image" class="icon" @click="profileToggle">
                 </div>
@@ -31,8 +32,11 @@
     <Notification :bellOpen="settings.bellOpen" />
 
     <Anmelden @exit="anmelden = false, this.settings.bellNumber = 2" :anmelden="anmelden" />
+
+    <ChatContainer />
 </template>
 
+        
 <script>
 import {
     Vue3Lottie
@@ -47,7 +51,9 @@ import Profile from './SubOpen/Profile.vue'
 import UploadArea from './SubOpen/UploadArea.vue'
 import {
     Button1,
-    UploadButton
+    UploadButton,
+    ChatIcon,
+    ChatContainer
 } from '@/components/Elements/'
 
 export default {
@@ -61,6 +67,8 @@ export default {
         Profile,
         UploadButton,
         UploadArea,
+        ChatIcon,
+        ChatContainer
     },
     data() {
         return {
@@ -86,7 +94,7 @@ export default {
 
     },
     setup() {
-       
+
     },
     methods: {
         closeMenu() {
@@ -102,9 +110,9 @@ export default {
             this.settings.uploadOpen = false
 
             if (this.settings.menuOpen === false) {
-                    this.$refs['menuControl'].setDirection("forward")
-                    this.$refs['menuControl'].play()
-                    this.settings.menuOpen = true
+                this.$refs['menuControl'].setDirection("forward")
+                this.$refs['menuControl'].play()
+                this.settings.menuOpen = true
             } else {
                 this.settings.menuOpen = false
                 this.$refs['menuControl'].setDirection("reverse")
@@ -115,18 +123,29 @@ export default {
             this.settings.bellOpen = !this.settings.bellOpen
             this.settings.profileOpen = false
             this.settings.uploadOpen = false
+            this.settings.chatOpen = false
             this.closeMenu()
         },
         profileToggle() {
             this.settings.profileOpen = !this.settings.profileOpen
             this.settings.bellOpen = false
             this.settings.uploadOpen = false
+            this.settings.chatOpen = false
             this.closeMenu()
+        },
+        chatToggle() {
+            this.settings.chatOpen = !this.settings.chatOpen
+            this.settings.bellOpen = false
+            this.settings.profileOpen = false
+            this.settings.uploadOpen = false
+            this.closeMenu()
+            console.log(this.settings.chatOpen)
         }
     },
 }
 </script>
 
+        
 <style>
 
-</style>
+        </style>

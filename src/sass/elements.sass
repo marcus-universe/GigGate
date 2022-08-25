@@ -7,11 +7,17 @@
         border-radius: 50%
         background: $neon
         transition: width 0.2s ease, height 0.2s ease, background 0.2s ease
+        @include media('<phone')
+            width: 8px
+            height: 8px
     .active
         width: 16px
         height: 16px
         background: $white
         box-shadow: 0 0rem 1rem rgba($neon,0.5)
+        @include media('<phone')
+            width: 12px
+            height: 12px
 
 .bottomCollum
     min-width: 100px
@@ -74,94 +80,387 @@ $checkboxSize: 20px
 //Filter Bar
 //######################################################################################################################
 $IconSize: 40px
-$paddingFilter: 0.4rem
+$IconSizeSmall: 35px
+$paddingFilter: 0.5rem
+@include media('<phone')
+    $IconSize: 35px
+    $IconSizeSmall: 30px
+    $paddingFilter: 0.4rem
 
-.filterSelector
-    position: relative
-    width: 80%
-    border-bottom: 1px solid $purple
-    padding: 0 0 $paddingFilter 0
-    .InstFilter
-        background: $purple
-        font-size: 1rem
-        padding: $paddingFilter
-        font-weight: 500
-        border-radius: $radius_2
-        &:hover
-            cursor: pointer
-    .instrumentSelect
-        background: $white
-        flex-wrap: wrap
-        width: 50%
-        left: 0rem
-        top: calc($paddingFilter * 2 + $IconSize)
-        position: absolute
-        border-radius: $radius_2
-        padding: $paddingFilter
-        gap: $paddingFilter
-        .selection
-            background: $white
-            padding: $paddingFilter
-            border-radius: $radius_2
-            transition: background 0.1s ease,
-            &:hover
-                background: rgba($purple, 0.4)
-                color: $bg
-                cursor: pointer
-            .filterInstIcon
-                width: $IconSize
-                height: $IconSize
-                min-width: $IconSize
-                min-height: $IconSize
-                path, circle
-                    fill: $bg
-        .active
-            background: $neon !important
-    .active
+.filterContainer
+    margin-bottom: 1.5rem
+    padding-bottom: 0.5rem
+    border-bottom: 1px solid $neon
+    @include media('<=phone')
+        overflow-x: auto
+        overflow-y: visible
+        overscroll-behavior-inline: contain
+    ::-webkit-scrollbar
+        width: $scrollbarSize
+        height: 0.3rem
+        background: $bg-glow-neon
+        border-radius: $radius_1
+    ::-webkit-scrollbar-thumb
         background: $neon
+        border-radius: $radius_1
+    // background: $white
+    .filterSelector
+        position: relative
+        // width: 80%
+        display: flex
+        padding: 0 0 $paddingFilter 0
+        @include media('<phone')
+            width: 95%
+        .InstFilter
+            background: $bg-gradient
+            color: $neon
+            font-size: 1rem
+            padding: calc($paddingFilter + 0.3rem)
+            font-weight: 500
+            border-radius: $radius_2
+            .arrow
+                width: 25px
+                height: 25px
+                position: relative
+                transform: rotate(90deg)
+                fill: $neon
+                transition: transform 0.2s ease
+            .active
+                transform: rotate(-90deg)
+                fill: $bg
+            .ortIcon
+                transform: rotate(0deg) !important
+            &:hover
+                cursor: pointer
+        .instrumentSelect
+            background: $bg-gradient
+            flex-wrap: wrap
+            width: 50vw
+            left: 0rem
+            top: calc($paddingFilter * 2 + 35px)
+            position: absolute
+            z-index: 2
+            border-radius: $radius_2
+            padding: $paddingFilter
+            gap: $paddingFilter
+            box-shadow: 0 0rem 2rem rgba($bg,0.5)
+            border: 0.2rem solid $neon
 
-            // transform: translate(-50%, -50%)
+            .exit
+                fill: $neon !important
+                position: fixed !important
+                .icon_1
+                    fill: $neon !important
+            @include media('<phone')
+                width: calc(90vw)
+                position: fixed
+                left: 50%
+                transform: translateX(-50%) translateY(-50%)
+                height: 100%
+                max-height: 80%
+                top: calc(42% + $menu_height)
+                overflow-y: auto
+                justify-content: flex-start
+                flex-direction: column
+                gap: 10px
+                align-items: center
+                flex-wrap: nowrap
+                ::-webkit-scrollbar
+                    width: $scrollbarSize
+                    height: 0.3rem
+                    background: $bg-glow-neon
+                    border-radius: $radius_1
+                ::-webkit-scrollbar-thumb
+                    background: $neon
+                    border-radius: $radius_1
+                &>.selection
+                    margin-top: 40px
+                &>.selection ~ .selection
+                    margin-top: 0
+                .selection
+                    padding: 10px
+
+            .selection
+                // background: $white
+                padding: $paddingFilter
+                border-radius: $radius_2
+                transition: background 0.1s ease
+                color: $neon
+                font-weight: 500
+                &:hover
+                    // background: rgba($purple, 0.4)
+                    // color: $bg
+                    cursor: pointer
+                .filterInstIcon
+                    width: $IconSize
+                    height: $IconSize
+                    min-width: $IconSize
+                    min-height: $IconSize
+                    path, circle, ellipse
+                        fill: $neon
+            .active
+                background: $neon !important
+                color: $bg !important
+                .filterInstIcon
+                    path, circle, ellipse
+                        fill: $bg
+        .active
+            background: $neon
+            color: $bg
+            cursor: pointer
+
+                // transform: translate(-50%, -50%)
 
 //######################################################################################################################
 //Room Cards
 //######################################################################################################################
-$IconSizeSmall: 30px
 
+.rooms
+    background: $bg-glow
+    @include media('<phone')
+        padding: 0 !important
+
+.roomList
+    // background: $purple
+    // padding: 1rem
+    @include media('<phone')
+        padding: 1rem
+        .width80p
+            width: 95%
 .raumCard
-    max-width: 300px
-    background: $white
-    border-radius: $radius_2
-    padding: calc($paddingFilter + 1rem) 0
+    max-width: 320px
+    min-width: 290px
+    background: $bg
+    border-radius: 1.5rem
+    padding-bottom: 0.5rem
+    // padding: calc($paddingFilter + 1rem) 0 0 0
+    overflow: hidden
+    box-shadow: 0.2rem 0.2rem 1rem rgba($bg,0.5)
+    @include media('<phone')
+        max-width: 100%
+        min-width: 100%
+        padding: 0
+        // margin: 0.5rem 0
+        // border-radius: 0
+        box-shadow: none
+        justify-content: center !important
+    // border-bottom: 0.1rem inset $neon
     .cardContainer
         width: 80%
+        color: $white
+        margin-top: 1rem
+        @include media ('<phone')
+            margin-top: 0
         h4
-            font-size: 1.2rem
-            font-weight: 500
+            font-size: 1.4rem
+            font-weight: 600
             margin: 0 0 0.5rem 0
-        .info, .icons
-            .instIcon, .infoIcon
-                path, circle
-                    fill: $bg
+        p
+            font-size: 1rem
+            font-weight: 400
+            margin: 0 0 1rem 0
+            padding: 0
+            @include media('<phone')
+                font-size: 0.9rem
+        .info
+            font-size: 1rem
+            .infoIcon
+                path, circle, ellipse
+                    fill: $white
             .infoIcon
                 width: $IconSizeSmall
                 height: $IconSizeSmall
                 min-width: $IconSizeSmall
                 min-height: $IconSizeSmall
-            .instIcon
-                width: $IconSize
-                height: $IconSize
-                min-width: $IconSize
-                min-height: $IconSize
-
+                @include media('<phone')
+                    width: 30px
+                    height: 30px
+                    min-width: 30px
+                    min-height: 30px
         .info
             margin-bottom: 1rem
             .person
-                padding: 0 $paddingFilter
+                padding: 0 $paddingFilter 0 0
+                font-size: 1.2rem
+                font-weight: 600
+                background: $purple
+                border: 0.2rem solid $purple
+                border-radius: $radius_2
+                color: $bg
+                @include media('<phone')
+                    font-size: 1rem
+                .infoIcon
+                    width: 30px
+                    height: 30px
+                    min-width: 30px
+                    min-height: 30px
+                    margin-right: 0.5rem
+                    @include media('<phone')
+                        width: 22px
+                        height: 22px
+                        min-width: 22px
+                        min-height: 22px
+                        // margin-right: 0.5rem
+                    path, circle, ellipse
+                        fill: $bg
             .breakline
                 width: 0.1rem
                 background: $bg
-
-    .imageSlide
-        min-height: 200px
+    .cardContainerBottom
+        width: 100%
         background: $bg
-        border-radius: $radius_2
+        // border-left: 0.2rem inset $neon
+        // border-right: 0.2rem inset $neon
+        // box-shadow: inset 0px 0px 0px 0.2rem $neon
+        .icons
+            background: $bg
+            width: 80%
+            padding: 0.5rem 0.5rem
+            pointer-events: all
+            ::-webkit-scrollbar
+                width: $scrollbarSize
+                height: 0.3rem
+                background: $bg-glow
+                border-radius: $radius_1
+            ::-webkit-scrollbar-thumb
+                background: $purple
+                border-radius: $radius_1
+
+            .instIconsContainer
+                width: 70%
+                max-width: calc(40px * 4)
+                max-height: 80px
+                overflow-x: auto
+                pointer-events: all
+
+                .instIcon
+                    width: $IconSize
+                    height: $IconSize
+                    min-width: $IconSize
+                    min-height: $IconSize
+                    pointer-events: all
+                    cursor: context-menu
+                    path, circle
+                        fill: $purple
+
+            .navIcon
+                width: 50px
+                height: 50px
+                min-width: 50px
+                min-height: 50px
+                fill: $neon
+                transition: fill 0.2s ease
+                &:hover
+                    cursor: pointer
+                    filter: drop-shadow(0 0rem 1rem rgba($bg,0.5))
+                    fill: $white
+
+$heightImage: 250px
+.imageSlide
+    min-height: $heightImage
+    aspect-ratio: 1/1
+    background: $bg
+    border-radius: $radius_2
+    overflow: hidden
+    position: relative
+    @include media('<phone')
+        aspect-ratio: 3/2
+        margin-bottom: 1.5rem
+
+    .sliderContainer
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 1
+        pointer-events: none
+        .bottomCollum
+            position: absolute
+            bottom: 1rem
+            left: 50%
+            transform: translateX(-50%)
+        .slide, .slideReverse
+            width: 40px
+            height: 40px
+            fill: $white
+            position: relative
+            filter: drop-shadow(0 0rem 1rem rgba($bg,0.8))
+            transition: fill 0.2s ease
+            pointer-events: all
+        .slideReverse
+            transform: rotate(180deg)
+
+    .imageContainer
+        position: absolute
+        top: 0
+        left: 0
+        transition: transform 0.2s ease
+        @include media('<phone')
+            align-items: center
+            justify-content: center
+            top: -20%
+            transform: translateY(-50%)
+        &:hover
+            cursor: pointer
+        div
+            width: 100%
+            min-height: $heightImage
+            aspect-ratio: 1/1
+            background-size: cover
+            background-position: center
+            background-repeat: no-repeat
+            object-fit: cover
+            border-radius: $radius_2
+
+.BiggerImage
+    position: fixed
+    top: calc(45% + $menu_height)
+    left: 50%
+    transform: translateX(-50%) translateY(-50%)
+    min-width: 40%
+    min-height: 40%
+    aspect-ratio: 1 / 1
+    overflow: hidden
+    z-index: 3
+    border-radius: $radius_1
+    .sliderContainer
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 4
+        .slide, .slideReverse
+            width: 60px
+            height: 60px
+            fill: $white
+            position: relative
+            filter: drop-shadow(0 0rem 1rem rgba($bg,0.8))
+            transition: fill 0.2s ease
+        .slideReverse
+            transform: rotate(180deg)
+    .imageContainer
+        position: absolute
+        top: 0
+        left: 0
+        transition: transform 0.2s ease
+        z-index: 3
+        width: 100%
+        height: 100%
+        div
+            width: 100%
+            height: 100%
+            background-size: cover
+            background-position: center
+            background-repeat: no-repeat
+            object-fit: cover
+            border-radius: $radius_1
+.slideshowBG
+    position: fixed
+    top: $menu_height
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 2
+    background: rgba($bg,0.9)

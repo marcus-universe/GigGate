@@ -18,9 +18,9 @@
     <div
         v-if="videoActive"
         class="videobox">
-        <video class="videoplayer" controls :poster="require('@/assets/img/banner/events.jpg')">
+        <video class="videoplayer" controls :poster="require('@/assets/img/banner/video_thumbnail_giggate.jpg')">
             <source
-                src="#"
+                src="@/assets/video/Video_Webseite_GigGate.mp4"
                 type="video/mp4">
         </video>
     </div>

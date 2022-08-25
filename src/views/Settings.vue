@@ -19,11 +19,11 @@
                 <label for="mobilemode">Mobile Ansicht</label>
                 <input type="checkbox" name="mobilemode" id="mobilemode" v-model="IsMobile" @change="mobileMode">
             </div>
-            <LinesStroke lineColor="lineMargin_small" />
+            <!-- <LinesStroke lineColor="lineMargin_small" />
             <div class="setting">
                 <label for="notify">Benachrichtigungen</label>
                 <input type="number" name="notifyNumber" id="notify" min="0" :max="maxNoftiy">
-            </div>
+            </div> -->
         </div>
     </div>
 </template>

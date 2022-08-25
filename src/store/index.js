@@ -1,7 +1,7 @@
 import {
   createStore
 } from 'vuex'
-import {commentsData, Prices, Notifications, filterIcons, rooms} from '@/assets/json'
+import {commentsData, Prices, Notifications, filterIcons, rooms, orte, message} from '@/assets/json'
 
 export default createStore({
   state: {
@@ -13,10 +13,13 @@ export default createStore({
       menuOpen: false,
       profileOpen: false,
       bellOpen: false,
+      chatOpen: false,
       NotifyNumber: 4,
       deletedNotify: false,
       uploadOpen: false,
       filterInstOpen: false,
+      filterOrteOpen: false,
+      menuNoShadow: false,
     },
     elements: {
       ButtonCenter: false,
@@ -25,13 +28,16 @@ export default createStore({
     comments: commentsData,
     preisListe: Prices,
     filterInst: filterIcons,
-    rooms: rooms
+    rooms: rooms,
+    orte: orte,
+    message: message,
   },
   getters: {},
   mutations: {
-    // SET_COMMITS(state, commit) {
-    //   state.comments = commit
-    // },
+    horizontalScroller(state, event) {
+      event.preventDefault()
+      event.currentTarget.scrollLeft += event.deltaY / 2
+    }
   },
   actions: {
 

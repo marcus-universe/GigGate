@@ -53,6 +53,7 @@ export default {
             this.settings.uploadOpen = !this.settings.uploadOpen
             this.settings.profileOpen = false
             this.settings.bellOpen = false
+            this.settings.chatOpen = false
         }
     }
 

@@ -8,8 +8,12 @@ import PriceBanner from "./PriceBanner.vue"
 import Checkbox from "./Checkbox.vue"
 import FilterInst from "./Filter/FilterInst.vue"
 import FilterIcon from "./Filter/FilterIcons.vue"
+import FilterOrte from "@/components/Elements/Filter/FilterOrte.vue"
 import RaumCard from "./Cards/RaumCard.vue" 
 import ImageSlider from "./Cards/ImageSlider.vue"
+import ChatIcon from "./Chat/ChatIcon.vue"
+import ChatMessage from "./Chat/ChatMessage.vue"
+import ChatContainer from "./Chat/ChatContainer.vue"
 
 export {
     CallToActionButton,
@@ -22,7 +26,11 @@ export {
     Checkbox,
     FilterInst,
     FilterIcon,
+    FilterOrte,
     RaumCard,
-    ImageSlider
+    ImageSlider,
+    ChatIcon,
+    ChatMessage,
+    ChatContainer
 
 }
