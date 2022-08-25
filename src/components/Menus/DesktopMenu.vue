@@ -1,37 +1,16 @@
 <template>
-<<<<<<< HEAD
-    <div class="desktopNavBar" :class="{noShadow: bellOpen}">
-        <div class="navContent">
-            <router-link to="/" class="LogoLink"><img src="../../assets/logo_icon_navbar.svg" alt="Logo GigGate"
-                    class="logo">
-            </router-link>
-=======
+
 <div
     class="desktopNavBar"
     :class="{noShadow: bellOpen}">
     <div class="navContent">
         <router-link
             to="/"
-            class="LogoLink"><img src="../../assets/giggate_logo_round.svg" alt="Logo GigGate" class="logo">
+            class="LogoLink"><img src="../../assets/logo_icon_navbar.svg" alt="Logo GigGate" class="logo">
         </router-link>
->>>>>>> 6b0eb66939400eb0989442825fb7c1f8e73cb231
 
         <div class="rightNav">
 
-<<<<<<< HEAD
-                <Button1 v-if="!settings.loggedIn" @buttonClicked="anmelden = true" :action="true">Anmelden</Button1>
-                <Button1 CustomStyle="ButtonStyle3" v-if="!settings.loggedIn">Registrieren</Button1>
-                <UploadButton v-if="settings.loggedIn" customClass="" @click="closeMenu" />
-                <Bell @click="bellToggle" :bellOpen="settings.bellOpen" />
-
-                <ChatIcon @chatToggle="chatToggle" v-if="settings.loggedIn" />
-
-                <div class="profile" v-if="settings.loggedIn">
-                    <img src="@/assets/img/profile/profile.jpg" alt="Profile Image" class="icon" @click="profileToggle">
-                </div>
-                <Vue3Lottie ref="menuControl" :animationData="MenuJSON" class="MenuBurger" :autoPlay="false"
-                    :pauseAnimation="false" direction="reverse" :loop="false" @click="playmenu()" />
-=======
             <Button1
                 v-if="!settings.loggedIn"
                 @buttonClicked="anmelden = true"
@@ -47,13 +26,15 @@
                 @click="bellToggle"
                 :bellOpen="settings.bellOpen" />
 
-            <ChatIcon @chatToggle="chatToggle" v-if="settings.loggedIn"/>
+            <ChatIcon
+                @chatToggle="chatToggle"
+                v-if="settings.loggedIn" />
 
             <div
                 class="profile"
                 v-if="settings.loggedIn">
                 <img src="@/assets/img/profile/profile.jpg" alt="Profile Image" class="icon" @click="profileToggle">
->>>>>>> 6b0eb66939400eb0989442825fb7c1f8e73cb231
+
             </div>
             <Vue3Lottie
                 ref="menuControl"
@@ -80,16 +61,9 @@
     @exit="anmelden = false, this.settings.bellNumber = 2"
     :anmelden="anmelden" />
 
-<<<<<<< HEAD
-    <Anmelden @exit="anmelden = false, this.settings.bellNumber = 2" :anmelden="anmelden" />
-
-    <ChatContainer />
-=======
 <ChatContainer />
->>>>>>> 6b0eb66939400eb0989442825fb7c1f8e73cb231
 </template>
 
-        
 <script>
 import {
     Vue3Lottie
@@ -197,8 +171,3 @@ export default {
     },
 }
 </script>
-
-        
-<style>
-
-        </style>
