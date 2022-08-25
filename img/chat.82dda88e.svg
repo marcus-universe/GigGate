@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #9980ff;
+      }
+
+      .cls-2 {
+        fill: #eff0ff;
+      }
+    </style>
+  </defs>
+  <g id="Chat">
+    <path class="cls-1" d="M476.56,100.82v252.9a33,33,0,0,1-32.93,32.91H186.39a70.54,70.54,0,0,0-23.64,4.07L49.18,430.91A15,15,0,0,1,30.6,410.45l24.65-52.76a66.63,66.63,0,0,0,6.24-28.05V100.82A33,33,0,0,1,94.41,67.89H443.63A33,33,0,0,1,476.56,100.82Z"/>
+  </g>
+  <g id="Ebene_13" data-name="Ebene 13">
+    <rect class="cls-2" x="241.13" y="0.44" width="41.87" height="264.21" rx="17.01" transform="translate(129.52 394.6) rotate(-90)"/>
+    <rect class="cls-2" x="220.01" y="113.44" width="41.87" height="221.98" rx="15.6" transform="translate(16.52 465.37) rotate(-90)"/>
+    <rect class="cls-2" x="255.22" y="170.12" width="41.87" height="292.39" rx="17.9" transform="translate(-40.17 592.46) rotate(-90)"/>
+  </g>
+</svg>
