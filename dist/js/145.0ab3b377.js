@@ -1,2 +1,2 @@
 "use strict";(self["webpackChunkgiggate"]=self["webpackChunkgiggate"]||[]).push([[145],{145:function(n,t,e){e.r(t),e.d(t,{default:function(){return g}});var c=e(3396);const r={class:"community"};function u(n,t){return(0,c.wg)(),(0,c.iD)("section",r)}var s=e(89);const a={},i=(0,s.Z)(a,[["render",u]]);var g=i}}]);
-//# sourceMappingURL=145.10275cc5.js.map
+//# sourceMappingURL=145.0ab3b377.js.map

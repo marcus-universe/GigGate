@@ -21,11 +21,15 @@
                     <img src="@/assets/Icons/Menu/profil_purple.svg" alt="Tutorial Workshop Icon">Profil Settings
                 </Button1>
 
+                <Button1 v-if="settings.mobile" :link="'preis'" CustomStyle="ButtonStyle1 text_left flex_start border_purple purpleText equalButtons">
+                    <img src="@/assets/Icons/Filter/preisFilter.svg" alt="Preis Icon">Abo auswählen
+                </Button1>
+
                 <Button1 :link="'/'" CustomStyle="ButtonStyle1 text_left flex_start border_purple purpleText equalButtons">
                     <img src="@/assets/Icons/Menu/tutorials.svg" alt="Tutorial Workshop Icon">Tutorials/Workshop
                 </Button1>
 
-                <Button1 :link="'/'" CustomStyle="ButtonStyle1 text_left flex_start border_purple purpleText equalButtons">
+                <Button1 :link="'community'" CustomStyle="ButtonStyle1 text_left flex_start border_purple purpleText equalButtons">
                     <img src="@/assets/Icons/Menu/group_purple.svg" alt="Tutorial Workshop Icon">Deine Gruppen
                 </Button1>
 

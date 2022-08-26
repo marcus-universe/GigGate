@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkgiggate"]=self["webpackChunkgiggate"]||[]).push([[884],{1884:function(n,e,t){t.r(e),t.d(e,{default:function(){return o}});var r=t(3396);const c={class:"Room"};function s(n,e,t,s,u,a){return(0,r.wg)(),(0,r.iD)("section",c)}var u={},a=t(89);const i=(0,a.Z)(u,[["render",s]]);var o=i}}]);
+//# sourceMappingURL=884.90accb15.js.map

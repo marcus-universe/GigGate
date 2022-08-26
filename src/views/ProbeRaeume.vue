@@ -19,7 +19,7 @@
 
     </div>
 
-    <div class="width100p flex_center_h gap2 slideSection">
+    <div class="flex_center_h gap2 slideSection">
       <FilterIcon :icon="'slider'" :customClass="'slideSectionIcon reverse'"></FilterIcon>
         <div class="NumberSection active">1</div>
         <div class="NumberSection">2</div>
