@@ -1,7 +1,9 @@
 <template>
   <div :class="{flex_center_h: ButtonCenter}">
-      <button class="CallToAction" :class="[ButtonStyle]" :to="'/' + link">
+      <button class="CallToAction" :class="[ButtonStyle]" :to="'/' + link ">
+        <router-link :to="'/' + link">
         <slot>Default Button Text</slot>
+        </router-link>
       </button>
   </div>
 </template>

@@ -6,7 +6,7 @@ import {commentsData, Prices, Notifications, filterIcons, rooms, orte, message, 
 export default createStore({
   state: {
     settings: {
-      loggedIn: true,
+      loggedIn: false,
       mobile: false,
       tablet: false,
       bellNumber: 2,
